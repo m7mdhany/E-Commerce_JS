@@ -6,7 +6,6 @@ if (sessionStorage.getItem("CartN") > 0) {
 let cartContainer = document.querySelector(".cart-container")
 
 
-console.log(cartContainer.innerText.length);
 async function getData(val = undefined, key) {
   try {
     const response = await fetch("../data.json");
@@ -85,7 +84,8 @@ async function getData(val = undefined, key) {
             sessionStorage.setItem("cart", newCart)
             let nn = sessionStorage.getItem("CartN")
             nn--
-            sessionStorage.setItem("CartN", nn)
+            sessionStorage.setItem("CartN", newCart.length)
+            console.log("here");
             cartNumber.innerText = sessionStorage.getItem("CartN")
           }
           cartQuantity[i].innerText = 0

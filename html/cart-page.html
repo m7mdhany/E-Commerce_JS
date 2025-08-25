@@ -22,7 +22,7 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>E-Market</title>
   </head>
-  <body id="body" class=" h-fit bg-gray-100 scroll-smooth ">
+  <body id="body" class="cart-body h-fit bg-gray-100 scroll-smooth relative">
     <button
       class="goUp z-50 bg-secondary hover:bg-main cursor-pointer text-white h-10 w-5 rounded-4xl p-10 fixed bottom-10 right-10 flex justify-center items-center">
       <i class="fa-solid fa-up-to-line text-xl ">↑</i>
@@ -56,6 +56,11 @@
       </div>
     </nav>
 
+    <!-- order place -->
+    <!-- <div
+      class="order-msg w-2/4 h-1/4 bg-secondary text-white fixed top-2/4 text-5xl scale-0 opacity-0 transition left-1/2 transform -translate-x-1/2 -translate-y-1/20 duration-75 z-50 flex justify-center items-center-safe shadow-2xl border-main border-4">
+      <div>Order Placed!</div>
+    </div> -->
     <main id="main" class="z-40 h-[calc(100vh-100px)] bg-main">
       <!-- products -->
       <section class="flex justify-center w-full h-full items-center relative">
@@ -115,7 +120,7 @@
                   <span>LE</span>
                 </div>
               </div>
-              <button class="w-full bg-secondary text-white text-xl cursor-pointer hover:bg-main p-2 mt-auto">
+              <button class="w-full btn-place bg-secondary text-white text-xl cursor-pointer hover:bg-main p-2 mt-auto">
                 Place Order!</button>
             </div>
           </div>
