@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css -->
+    <link rel="stylesheet" href="../Styling/styles.css">
+    <link rel="stylesheet" href="../Styling/general_styles.css">
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <title>E-Market</title>
+  </head>
+  <body class="">
+    <div class="logo_bar cursor-pointer">
+      <h1 class="cursor-pointer">E-Market</h1>
+    </div>
+    <div id="main" class="">
+    </div>
+    <div class="main-form ">
+      <div class="sup_form">
+        <!-- Sign in -->
+        <form id="signIn" action="">
+          <h3>Sign in</h3>
+          <div>
+            <span></span>
+            <label for="username">Username</label>
+            <input type="text" id="userUsername" name="username">
+          </div>
+          <div>
+            <span></span>
+            <label for="password">Password</label>
+            <div class="passDiv">
+              <input type="password" id="userPassword" name="password">
+              <i class="fa-regular fa-eye"></i>
+            </div>
+          </div>
+          <button id="signBtn" type="button">Sign in</button>
+          <a id="signForm">Don't have account? signUp</a>
+          <div class="rem">
+            <p>Remember me</p>
+            <input id="remember" type="checkbox">
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <script src="../js/scriptSignin.js"></script>
+  </body>
+</html>

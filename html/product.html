@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="../Styling/products.css">
+    <!-- <link rel="stylesheet" href="Styling/general_styles.css"> -->
+    <link rel="stylesheet" href="../output.css">
+    <!-- <link rel="stylesheet" href="tailwind.css"> -->
+    <!-- tailwind -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>E-Market</title>
+  </head>
+  <body id="body" class=" h-fit bg-gray-100 scroll-smooth ">
+    <button
+      class="goUp z-100 bg-main hover:bg-sec cursor-pointer hover:text-white h-10 w-5 rounded-4xl p-10 fixed bottom-10 right-10 flex justify-center items-center">
+      <i class="fa-solid fa-up-to-line text-2xl"></i>
+    </button>
+    <!-- nav -->
+    <nav class="h-24 flex items-center bg-white justify-between shadow-lg px-10 sticky top-0 z-50 ">
+      <div class="mian-div flex justify-between w-full">
+        <div class="logo-div cursor-pointer relative whitespace-nowrap">
+          <a href="../index.html" class="h-full w-full absolute"></a>
+          <p class="text-main text-5xl font-bold">E-Market</p>
+        </div>
+        <div class="flex gap-10 text-xl items-center grow px-20 justify-end">
+          <a class="hover:underline" href="../index.html">Home</a>
+          <a class="hover:underline" href="products.html">Products</a>
+        </div>
+        <div class="div-links flex items-center justify-between gap-10 text-xl">
+          <div class="flex justify-between w-fit gap-7">
+            <a href="">
+              <!-- <i class="fa-solid fa-magnifying-glass text-main"></i> -->
+            </a>
+            <a href="cart-page.html" class="relative">
+              <span class="text-main absolute top-0 left-5 rounded-4xl p-1 text-sm bg-black cart-number"></span>
+              <i class="fa-solid fa-cart-shopping text-main"></i>
+            </a>
+            <a href="login.html">
+              <i class="fa-solid fa-user text-main"></i>
+            </a>
+            <p>Welcome, <span id="navUser" class="text-sec font-bold">Guest</span></p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main" class="z-40 h-[calc(100vh-100px)] bg-main">
+      <!-- products -->
+      <section class="flex justify-center w-full h-full items-center relative">
+        <div
+          class="h-3/4 w-1/2 absolute translate-x-1/6 bg-white shadow-2xl shadow-2xl/50 flex border-l-8 border-secondary">
+          <div class="w-2/4"></div>
+          <div class="product-details w-full h-full flex flex-col gap-10 justify-center text-2xl pr-5">
+            <h2 class="text-5xl">Mango</h2>
+            <p>Price : </p>
+            <p>Stock : </p>
+            <p>Category : </p>
+            <p>SubCategory : </p>
+            <button
+              class="btn-cart bg-secondary text-white p-2 w-1/2 transition-all 2s hover:scale-120 hover:bg-main cursor-pointer">ADD
+              TO
+              CART</button>
+          </div>
+          <div
+            class="h-3/4 w-1/2 shadow-xl/30 absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border-4 p-1 border-secondary">
+            <img class="prdImg h-full w-full object-contain " src="" alt="">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="h-40 w-full border bg-[#154D71] flex items-center justify-around px-5 gap-10 ">
+      <h2 class="text-main text-7xl font-bold">E-MARKET</h2>
+      <div class="flex justify-between gap-10">
+        <div class="text-white">
+          <p class=" font-bold text-2xl mb-2">About Us</p>
+          <p>We are web developers</p>
+          <p>We use MEARN </p>
+        </div>
+        <div class="text-white">
+          <p class=" font-bold text-2xl mb-2">Contact</p>
+          <span>Email / </span><span>Muhamedhany.m@mail.com</span>
+          <br>
+          <span>Mobile / </span>
+          <span>01203353502</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/product.js"></script>
+  </body>
+</html>
