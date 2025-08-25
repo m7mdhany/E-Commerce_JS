@@ -1,5 +1,5 @@
 # E-Commerce using native javascript
-## Tailwind css
+## HTML 5, CSS 3,Tailwind css
 E-Commerce website
 api fetch 
 login, sign up validations
