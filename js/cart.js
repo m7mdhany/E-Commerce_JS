@@ -33,16 +33,16 @@ async function getData(val = undefined, key) {
     document.querySelector(".items-total").innerText = product.length
     for (let i = 0; i < product.length; i++) {
       cartContainer.innerHTML += `
-              <div class=" cart-card border-b min-h-40 h-40 grid grid-cols-15 justify-center items-center text-2xl gap-5">
-                <div class="w-full h-40 col-span-3  p-2 cursor-pointer prod-item">
-                  <img class="w-full object-cover h-full" src="../${product[i].image}" alt="">
+              <div class=" cart-card border-b min-h-20 h-20 grid grid-cols-15 justify-center items-center gap-5">
+                <div class="w-full h-20 col-span-3  p-2 cursor-pointer prod-item">
+                  <img class="w-full object-cover object-top h-full" src="../${product[i].image}" alt="">
                 </div>
-                <h2 class="h-full text-2xl flex items-center col-span-4">${product[i].name}</h2>
+                <h2 class="h-full text flex items-center col-span-4">${product[i].name}</h2>
                 <div class="col-span-4 flex flex-col justify-center items-center h-full">
                   <div class="flex col-span-4 gap-2">
-                    <button class="cursor-pointer btn-cart-m bg-secondary text-white w-10 hover:bg-main ">-</button>
+                    <button class="cursor-pointer btn-cart-m bg-secondary text-white w-7 hover:bg-main ">-</button>
                     <div class="border px-2 cart-qu">1</div>
-                    <button class="cursor-pointer btn-cart-p bg-secondary text-white w-10 hover:bg-main">+</button>
+                    <button class="cursor-pointer btn-cart-p bg-secondary text-white w-7 hover:bg-main">+</button>
                   </div>
                 </div>
                 <div class=" col-span-2 flex gap-1">
