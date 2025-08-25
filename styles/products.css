@@ -8,13 +8,13 @@
 
 
   20% {
-    transform: rotateY(10deg);
+    transform: rotateY(30deg);
     border-right: 10px solid black;
     border-left: 0px solid black;
   }
 
   70% {
-    transform: rotateY(-10deg);
+    transform: rotateY(-30deg);
     border-right: 0px solid black;
     border-left: 10px solid black;
   }

@@ -45,13 +45,15 @@ async function getData() {
     function allProducts(arr, i) {
       return `
               <div
-                class="card max:h-96 h-96 transition duration-300 ease-in-out flex gap-1 flex-col bg-white shadow-sm">
+                class="card max:h-96 h-96 transition duration-300 ease-in-out flex gap-1 flex-col bg-white shadow-sm rounded-lg overflow-hidden">
                 <div class="flex flex-col grow px-3 pt-3">
                   <div class="grow max-h-70 h-50 w-full cursor-pointer">
                     <img class=" object-top object-cover h-full w-full" src= ../${arr[i].image} alt = "" >
                   </div >
+                  <div class="h-1/4 flex flex-col justify-around ">
                   <h2 class="p-name text-center font-bold">${arr[i].name}</h2>
                   <h3 class="price"><span class="font-bold">Price</span> : ${arr[i].price} LE</h3>
+                  </div>
                 </div >
                   <button class="btn-cart p-2 self-center w-full cursor-pointer text-white bg-secondary hover:bg-main">Add to cart</button>
               </div>
