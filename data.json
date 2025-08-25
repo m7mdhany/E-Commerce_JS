@@ -1,0 +1,601 @@
+{
+  "products": [
+    {
+      "name": "Apple 17 pro MAX",
+      "price": 75000,
+      "Brand": "APPLE",
+      "processor": "APPLE A18PRO(3nm)",
+      "Ram": "8 GB",
+      "Storage": "265 GB",
+      "stock": 10,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Mobiles",
+      "image": "Assets/products/elec/mobile/APPLE-17-PRO-MAX.png"
+    },
+    {
+      "name": "Realme C53",
+      "price": 7000,
+      "Brand": "Realme",
+      "processor": "unisoc Tiger T612 (12nm) octa core",
+      "Ram": "6 GB",
+      "Storage": "128 GB",
+      "stock": 15,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Mobiles",
+      "image": "Assets/products/elec/mobile/realme-C53.jpeg"
+    },
+    {
+      "name": "Oppo reno 12F",
+      "price": 15000,
+      "Brand": "OPPO",
+      "processor": "mediatek Dimensity 6300 (6nm) octa core",
+      "Ram": "12 GB",
+      "Storage": "265 GB",
+      "stock": 13,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Mobiles",
+      "image": "Assets/products/elec/mobile/oppo-reno-12F.jpeg"
+    },
+    {
+      "name": "Vivo v50 lite",
+      "price": 13600,
+      "Brand": "OPPO",
+      "processor": "Dimensity 6300 (6nm) octa core",
+      "Ram": "8 GB",
+      "Storage": "265 GB",
+      "stock": 5,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Mobiles",
+      "image": "Assets/products/elec/mobile/vivo-v50-lite.jpeg"
+    },
+    {
+      "name": "Samsung Galaxy s24 ultra ",
+      "price": 51399,
+      "Brand": "Samsung",
+      "processor": "qualcomm snadargon 8gen3 octa core",
+      "Ram": "12 GB",
+      "Storage": "265 GB",
+      "stock": 5,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Mobiles",
+      "image": "Assets/products/elec/mobile/samsung-Galaxy-s24-ultra.jpeg"
+    },
+    {
+      "name": "Xiaomi Redmi 14C",
+      "price": 7139,
+      "Brand": "Xiaomi",
+      "processor": "media Tek Helio G81 ULTRA Octa Core",
+      "Ram": "8 GB",
+      "Storage": "265 GB",
+      "stock": 7,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Mobiles",
+      "image": "Assets/products/elec/mobile/xiaomi-Redmi-14C.jpeg"
+    },
+    {
+      "name": "Apple MacBook Air",
+      "price": 51777,
+      "Screen": 13.6,
+      "stock": 6,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "image": "Assets/products/elec/labtop/applemacbookair.jpeg"
+    },
+    {
+      "name": "HP Pavilion x360 14-ek1019ne",
+      "price": 33999,
+      "Screen": 14,
+      "stock": 4,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "image": "Assets/products/elec/labtop/HPPavilionx36014-ek1019ne.jpeg"
+    },
+    {
+      "name": "lenovo LOQ 15IRX9",
+      "price": 37499,
+      "Screen": 15.6,
+      "stock": 5,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "image": "Assets/products/elec/labtop/LENOVOLOQ15IRX9.jpeg"
+    },
+    {
+      "name": "Asus Vivobook D1502YA-NJ007W",
+      "price": 23999,
+      "Screen": 15.6,
+      "stock": 7,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "image": "Assets/products/elec/labtop/asusVivobookD1502YANJ007W.jpg"
+    },
+    {
+      "name": "Dell G15 5530",
+      "price": 62500,
+      "Screen": 15.6,
+      "stock": 6,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "image": "Assets/products/elec/labtop/dellG155530.jpg"
+    },
+    {
+      "name": "Acer Aspire 3 A315-44P-R4GH",
+      "price": 15999,
+      "Screen": 15.6,
+      "stock": 9,
+      "discount": 0,
+      "category": "Electronics",
+      "subcategory": "Laptops",
+      "image": "Assets/products/elec/labtop/acerAspireA31544PR4GH.jpeg"
+    },
+    {
+      "name": "Strawberry",
+      "price": 50,
+      "stock": 200,
+      "discount": 0,
+      "`category": "Fresh Food",
+      "subcategory": "Fruits",
+      "image": "Assets/products/fresh/fruit/strawberry.jpg"
+    },
+    {
+      "name": "Orange",
+      "price": 40,
+      "stock": 100,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Fruits",
+      "image": "Assets/products/fresh/fruit/orange.jpg"
+    },
+    {
+      "name": "Watermelon",
+      "price": 150,
+      "stock": 50,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Fruits",
+      "image": "Assets/products/fresh/fruit/melon.jpg"
+    },
+    {
+      "name": "Mango",
+      "price": 70,
+      "stock": 60,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Fruits",
+      "image": "Assets/products/fresh/fruit/mango.webp"
+    },
+    {
+      "name": "Blue Berry",
+      "price": 85,
+      "stock": 30,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Fruits",
+      "image": "Assets/products/fresh/fruit/b-berry.webp"
+    },
+    {
+      "name": "Tomato",
+      "price": 12,
+      "stock": 50,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Vegetables",
+      "image": "Assets/products/fresh/veg/tomato.jpg"
+    },
+    {
+      "name": "Cucumber",
+      "price": 12,
+      "stock": 50,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Vegetables",
+      "image": "Assets/products/fresh/veg/cucumber.jpg"
+    },
+    {
+      "name": "Potato",
+      "price": 16,
+      "stock": 50,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Vegetables",
+      "image": "Assets/products/fresh/veg/potato.jpg"
+    },
+    {
+      "name": "Onion",
+      "price": 10,
+      "stock": 70,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Vegetables",
+      "image": "Assets/products/fresh/veg/onion.jpg"
+    },
+    {
+      "name": "Lemon",
+      "price": 120,
+      "stock": 10,
+      "discount": 0,
+      "category": "Fresh Food",
+      "subcategory": "Vegetables",
+      "image": "Assets/products/fresh/veg/lemon.jpg"
+    },
+    {
+      "name": "Ice Chocolate",
+      "price": 70,
+      "stock": 30,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Cold",
+      "image": "Assets/products/drink/ice/icedchoclet.jpg"
+    },
+    {
+      "name": "Iced Coffee",
+      "price": 90,
+      "stock": 20,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Cold",
+      "image": "Assets/products/drink/ice/Iced-Coffee.jpg"
+    },
+    {
+      "name": "Ice Spanish Latte",
+      "price": 80,
+      "stock": 10,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Cold",
+      "image": "Assets/products/drink/ice/icespanish-latte.jpg"
+    },
+    {
+      "name": "Milk Shake Blueberry",
+      "price": 110,
+      "stock": 25,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Cold",
+      "image": "Assets/products/drink/ice/milkshakebluberry.jpg"
+    },
+    {
+      "name": "Milk Shake Strawberry",
+      "price": 120,
+      "stock": 20,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Cold",
+      "image": "Assets/products/drink/ice/milk-shake-strawberry.jpg"
+    },
+    {
+      "name": "Mojito Green Apple",
+      "price": 65,
+      "stock": 40,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Cold",
+      "image": "Assets/products/drink/ice/mojito-green-apple.png"
+    },
+    {
+      "name": "Espresso",
+      "price": 65,
+      "stock": 20,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Hot",
+      "image": "Assets/products/drink/hot/espresso.jpg"
+    },
+    {
+      "name": "French Coffee",
+      "price": 65,
+      "stock": 10,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Hot",
+      "image": "Assets/products/drink/hot/frenchcoffee.jpg"
+    },
+    {
+      "name": "Hot Chocolate",
+      "price": 80,
+      "stock": 10,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Hot",
+      "image": "Assets/products/drink/hot/hotchocolate.jpg"
+    },
+    {
+      "name": "Hot Cider",
+      "price": 50,
+      "stock": 20,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Hot",
+      "image": "Assets/products/drink/hot/hotcider.jpg"
+    },
+    {
+      "name": "Nesscafee",
+      "price": 30,
+      "stock": 20,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Hot",
+      "image": "Assets/products/drink/hot/nesscafee.jpg"
+    },
+    {
+      "name": "Sahlab",
+      "price": 30,
+      "stock": 20,
+      "discount": 0,
+      "category": "Drinks",
+      "subcategory": "Hot",
+      "image": "Assets/products/drink/hot/sahlab.jpg"
+    },
+    {
+      "name": "PlayStation 5 Pro",
+      "price": 45900,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/playstation5.webp"
+    },
+    {
+      "name": "PlayStation 4 fat 500 GB",
+      "price": 45900,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/playstation4.webp"
+    },
+    {
+      "name": "Monopoly",
+      "price": 300,
+      "stock": 200,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Board Games",
+      "image": "Assets/products"
+    },
+    {
+      "name": "Sharp Front Load Washing Machine",
+      "Type": "Washing Machine",
+      "price": 31499,
+      "stock": 40,
+      "discount": 0,
+      "Capacity": "9 KG",
+      "Dimensions": "W x H x D : 597 x 845 x 582",
+      "Color": "Black",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/automatic-machine/sharp.png"
+    },
+    {
+      "name": "Front Load Washing Machine",
+      "Type": "Washing Machine",
+      "price": 17299,
+      "stock": 35,
+      "discount": 0,
+      "Capacity": "7 KG",
+      "Dimensions": "W x H x D : 597x 845 x 527",
+      "Color": "Silver",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/automatic-machine/"
+    },
+    {
+      "name": "Fresh Refrigerator",
+      "Type": "Refrigerator",
+      "price": 21499,
+      "stock": 35,
+      "discount": 0,
+      "Capacity": "471 Liters",
+      "Dimensions": "(DxHxW) 745x1828x705 mm",
+      "Color": "Silver",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/refrigerator/fresh.jpeg"
+    },
+    {
+      "name": "Sharp Refrigerator",
+      "Type": "Refrigerator",
+      "price": 28780,
+      "stock": 45,
+      "discount": 0,
+      "Capacity": "449 Liters",
+      "Dimensions": "1670X700X720mm",
+      "Color": "Black",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/refrigerator/sharp.jpg"
+    },
+    {
+      "name": "LG TV",
+      "Type": "TV",
+      "price": 54999,
+      "stock": 40,
+      "discount": 0,
+      "Resolution ": "4K UHD (3840x2160)",
+      "Size": "75 Inch",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products"
+    },
+    {
+      "name": "Samsung TV",
+      "Type": "TV",
+      "price": 109999,
+      "stock": 35,
+      "discount": 0,
+      "Resolution ": "4K UHD (3840x2160)",
+      "Size": "55 Inch",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products"
+    },
+    {
+      "name": "Sharp TV",
+      "Type": "TV",
+      "price": 49900,
+      "stock": 40,
+      "discount": 0,
+      "Resolution ": "4K UHD (3840x2160)",
+      "Size": "75 Inch",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/"
+    },
+    {
+      "name": "Fresh Gas cooker",
+      "Type": "Gas cooker",
+      "price": 19925,
+      "stock": 40,
+      "discount": 0,
+      "Dimensions": "85X90X60mm",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/gas-cooker/Fresh.jpg"
+    },
+    {
+      "name": "Zanussi Gas cooker",
+      "Type": "Gas cooker",
+      "price": 17170,
+      "stock": 50,
+      "discount": 0,
+      "Dimensions": "850X900X600mm",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/gas-cooker/Zanussi.jpg"
+    },
+    {
+      "name": "Hair Automatic Washing Machine",
+      "Type": "Automatic Washing Machine",
+      "price": 13999,
+      "stock": 55,
+      "discount": 0,
+      "Dimensions": "(HxWxD): 85x59.5x51 cm",
+      "Capacity": "8 Kg",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/automatic-machine/haier.jpg"
+    },
+    {
+      "name": "Sharp Automatic Washing Machine",
+      "Type": "Automatic Washing Machine",
+      "price": 31499,
+      "stock": 50,
+      "discount": 0,
+      "Dimensions": "W x H x D : 597 x 845 x 582",
+      "Capacity": "9 Kg",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/automatic-machine/sharp.png"
+    },
+    {
+      "name": "LG Automatic Washing Machine",
+      "Type": "Automatic Washing Machine",
+      "price": 19490,
+      "stock": 45,
+      "discount": 0,
+      "Dimensions": "85 x 60 x 56 cm",
+      "Capacity": "8 Kg",
+      "category": "Home Appliances",
+      "subcategory": "Large",
+      "image": "Assets/products/home/automatic-machine/LG.jpg"
+    },
+    {
+      "name": "Sonai Blender",
+      "Type": "Blender",
+      "price": 2122,
+      "Capacity": "1.5 KG",
+      "stock": 150,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/blender/sonai-blender.jpg"
+    },
+    {
+      "name": "Black Decker Blender",
+      "Type": "Blender",
+      "price": 5772,
+      "Capacity": "1.5 KG",
+      "stock": 120,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/blender/black-Decker.jpg"
+    },
+    {
+      "name": "Gorenje Built-in Microwave",
+      "Type": "Microwave",
+      "price": 35500,
+      "Capacity": "25 Liters",
+      "stock": 140,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/microwave/Gorenje-built-in-microwave.jpeg"
+    },
+    {
+      "name": "LG Solo Microwave",
+      "Type": "Microwave",
+      "price": 13400,
+      "Capacity": "25 Liters",
+      "stock": 160,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/microwave/LG-Solo-Microwave.jpg"
+    },
+    {
+      "name": "Nespresso D30EU2RENE2 Coffe machine",
+      "Type": " Coffe machine",
+      "price": 8599,
+      "Capacity": "0.6 Liter",
+      "stock": 130,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/coffe-machine/nespresso.png"
+    },
+    {
+      "name": "Tornado TCME-100D-PRO Coffe machine",
+      "Type": " Coffe machine",
+      "price": 7699,
+      "Capacity": "2.3 Liter",
+      "stock": 140,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/coffe-machine/tornado.jpg"
+    },
+    {
+      "name": "Tornado TST-700 Toaster maker",
+      "Type": " Toaster maker",
+      "price": 3299,
+      "Power": "700 watt",
+      "stock": 150,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/toaster-maker/tornado.jpg"
+    },
+    {
+      "name": "Mienta SM27509A Toaster maker",
+      "Type": " Toaster Maker",
+      "price": 2599,
+      "Power": "750 watt",
+      "stock": 150,
+      "discount": 0,
+      "category": "Home Appliances",
+      "subcategory": "Small",
+      "image": "Assets/products/home/toaster-maker/Mienta.jpg"
+    }
+  ]
+}
