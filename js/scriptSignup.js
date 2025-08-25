@@ -129,6 +129,6 @@ showPass[1].addEventListener("click", function () {
 
 
 formRegLink.addEventListener("click", function () {
-  location.assign("/login.html")
+  location.assign("login.html")
 })
 

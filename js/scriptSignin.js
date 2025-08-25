@@ -86,6 +86,6 @@ showPass[0].addEventListener("click", function () {
 
 
 formSignLink.addEventListener("click", function () {
-  location.assign("/signup.html")
+  location.assign("signup.html")
 })
 
