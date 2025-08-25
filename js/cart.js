@@ -34,9 +34,9 @@ async function getData(val = undefined, key) {
       cartContainer.innerHTML += `
               <div class=" cart-card /border-b min-h-20 h-20 grid grid-cols-15 justify-center items-center gap-5 bg-gray-100">
                 <div class="w-full h-20 col-span-3  p-1 cursor-pointer prod-item">
-                  <img class="w-full object-cover object-top h-full" src="../${product[i].image}" alt="">
+                  <img class="w-full object-contain object-top h-full bg-white  border-x-2" src="../${product[i].image}" alt="">
                 </div>
-                <h2 class="h-full text flex items-center col-span-4">${product[i].name}</h2>
+                <h2 class="h-full flex items-center col-span-4">${product[i].name}</h2>
                 <div class="col-span-4 flex flex-col justify-center items-center h-full">
                   <div class="flex col-span-4 gap-2">
                     <button class="cursor-pointer btn-cart-m bg-secondary text-white w-7 hover:bg-main ">-</button>
