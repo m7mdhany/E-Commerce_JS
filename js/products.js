@@ -1,0 +1,157 @@
+let cardContainer = document.getElementById("cardContainer")
+let card = document.getElementById("card")
+let products
+let cartNumber = document.querySelector(".cart-number")
+if (sessionStorage.getItem("CartN") > 0) {
+  cartNumber.innerText = sessionStorage.getItem("CartN")
+}
+let allCart = []
+if (sessionStorage.getItem("cart")) {
+  allCart = [...sessionStorage.getItem("cart").split(",")]
+}
+
+
+// main f
+async function getData() {
+  try {
+    const response = await fetch("../data.json");
+    const data = await response.json();
+    products = data.products
+
+    //  sorting
+    let sorter = document.querySelector(".sorter")
+    sorter.addEventListener("change", function () {
+      if (sorter.value === "1") {
+        products.sort((a, b) => a.price - b.price);
+        startFilter()
+      } else if (sorter.value === "2") {
+        console.log("hi");
+        products.sort((a, b) => b.price - a.price);
+        startFilter()
+      } else if (sorter.value === "3") {
+        products.sort((a, b) => a.name.localeCompare(b.name));
+        startFilter()
+      } else if (sorter.value === "4") {
+        products.sort((a, b) => b.name.localeCompare(a.name));
+        startFilter()
+      }
+
+    })
+
+    // cat filter
+    // let filter = products.filter(obj =>
+    //   Object.values(obj).includes(val))
+
+    function allProducts(arr, i) {
+      return `
+              <div
+                class="card max:h-96 h-96 transition duration-300 ease-in-out flex gap-1 flex-col bg-white shadow-sm">
+                <div class="flex flex-col grow px-3 pt-3">
+                  <div class="grow max-h-70 h-50 w-full cursor-pointer">
+                    <img class=" object-top object-cover h-full w-full" src= ../${arr[i].image} alt = "" >
+                  </div >
+                  <h2 class="p-name text-center font-bold">${arr[i].name}</h2>
+                  <h3 class="price"><span class="font-bold">Price</span> : ${arr[i].price} LE</h3>
+                </div >
+                  <button class="btn-cart p-2 self-center w-full cursor-pointer text-white bg-secondary hover:bg-main">Add to cart</button>
+              </div>
+            `
+    }
+
+    startFilter = function (val) {
+      if (localStorage.getItem("cat")) {
+        val = localStorage.getItem("cat")
+      } else {
+        val = ""
+      }
+      let filter = products.filter(obj =>
+        Object.values(obj).includes(val))
+      cardContainer.innerHTML = ``
+      console.log(val);
+      console.log(products);
+      if (val) {
+        for (let i = 0; i < filter.length; i++) {
+          cardContainer.innerHTML += allProducts(filter, i)
+        }
+        localStorage.removeItem("cat")
+      } else {
+        for (let i = 0; i < products.length; i++) {
+          console.log("hi");
+          cardContainer.innerHTML += allProducts(products, i)
+        }
+      }
+      addToCart()
+    }
+    startFilter()
+
+    // product card page
+    let allCards = document.querySelectorAll(".card img")
+    let oneCard = document.querySelectorAll(".card .p-name")
+    allCards.forEach((item, i) => item.addEventListener("click", function () {
+      let card = oneCard[i].innerHTML
+      sessionStorage.setItem("product", card)
+      location.assign("product.html")
+    }))
+
+    // add to cart page
+    function addToCart() {
+      let btnCart = document.querySelectorAll(".btn-cart")
+      btnCart.forEach(item => item.addEventListener("click", function () {
+        let cart = this.parentElement.querySelector(".p-name").innerText
+        let cartNumber = document.querySelector(".cart-number")
+        let cartN = sessionStorage.getItem("CartN")
+        if (!allCart.includes(cart)) {
+          cartN++
+          allCart.push(cart)
+          console.log(allCart);
+        }
+        sessionStorage.setItem("cart", allCart)
+        sessionStorage.setItem("CartN", cartN)
+        cartNumber.innerText = sessionStorage.getItem("CartN")
+      }))
+    }
+    addToCart()
+
+
+
+
+    // end
+  } catch (error) {
+    console.error("Error fetching JSON:", error);
+    cardContainer.innerHTML = `ERROR 404`
+  }
+}
+// cats filter
+
+
+getData(localStorage.getItem("cat"))
+let cartAdd = document.querySelectorAll("cartAdd")
+
+
+// side bar cat
+let sideBar = document.querySelectorAll(".side-categories div div")
+sideBar.forEach((element, i) => {
+  let lastElement
+  let target = document.querySelectorAll(".side-categories button")[i].innerHTML
+  // let target
+  element.addEventListener("click", function () {
+    sideBar.forEach((element) => {
+      element.classList.remove("bg-main", "w-full", "w-[115%]")
+    })
+    this.classList.add("bg-main", "w-[115%]")
+    // this.classList.toggle("w-[120%]")
+    // this.classList.add("bg-main")
+    lastElement = this
+    if (target == "All Products") { target = "" }
+    localStorage.setItem("cat", target)
+    startFilter(target);
+  })
+})
+
+// scroller
+let goUp = document.querySelector(".goUp")
+goUp.addEventListener("click", function () {
+  document.getElementById("body").scrollIntoView({ behavior: "smooth" });
+});
+
+
