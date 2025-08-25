@@ -64,12 +64,12 @@ async function getData(val1 = undefined, val2 = undefined) {
             <p class="z-5 font-bold text-white absolute text-2xl text-shadow-lg top-0 left-0 -rotate-45">
               NEW!
             </p>
-            <div class=" w-3/4 overflow-hidden grow h-100 mt-5 rounded-t-2xl">
+            <div class=" w-3/4 overflow-hidden grow h-100 mt-5 rounded-t-2xl border-x-1 border-t-1 border-secondary">
               <img class="object-cover h-full m-auto" src="../${filter[i].image}" alt="">
             </div>
             <div class="w-full flex flex-col items-center bg-white shadow-lg">
-              <h3 class="text-center font-bold rounded-2xl text-xl ">${filter[i].name}</h3>
-              <span class="w-fit text-center bg-main text-xl p-1 text-secondary font-bold absolute right-0 top-65">
+              <h3 class="text-center font-bold rounded-2xl text-xl h-13 flex items-center p-2">${filter[i].name}</h3>
+              <span class="w-fit text-center bg-main text-xl p-1 text-secondary font-bold absolute right-0 top-60">
               ${filter[i].price} LE</span>
               <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">
                 Add to cart</button>
@@ -98,12 +98,12 @@ async function getData(val1 = undefined, val2 = undefined) {
             <p class="z-5 font-bold text-red-600 absolute text-2xl text-shadow-lg top-0 -left-5 -rotate-45">
               LIMITED!
             </p>
-            <div class=" w-3/4 overflow-hidden grow h-100 mt-5 ">
+            <div class=" w-3/4 overflow-hidden grow h-100 mt-5 rounded-t-2xl border-x-1 border-t-1 border-secondary">
               <img class="object-cover h-full m-auto" src="../${filter[i].image}" alt="">
             </div>
-            <div class="w-full flex flex-col items-center bg-white shadow-2xl">
-              <h3 class="text-center font-bold rounded-2xl text-xl ">${filter[i].name}</h3>
-              <div class="absolute  top-65 flex ">
+            <div class="w-full flex flex-col items-center  bg-white shadow-2xl">
+              <h3 class="text-center font-bold rounded-2xl h-13 flex items-center text-md ">${filter[i].name}</h3>
+              <div class="absolute  top-60 flex w-5/6">
                 <p class="timer p-1 w-full grow text-main font-bold text-center bg-white px-2">
                   00:00:00</p>
                 <span class="w-fit text-center bg-main p-1 text-red-600 line-through font-bold whitespace-nowrap ">
@@ -215,4 +215,4 @@ async function getData(val1 = undefined, val2 = undefined) {
 
 };
 
-getData(["Tomato", "Potato"], ["Onion", "Lemon"])
+getData(["Apple 17 pro MAX", "PlayStation 5 Pro", "Sharp Front Load Washing Machine", "Sonai Blender"], ["Milk Shake Strawberry", "Lemon", "Tornado TST-700 Toaster maker", "Tornado TCME-100D-PRO Coffe machine"])
