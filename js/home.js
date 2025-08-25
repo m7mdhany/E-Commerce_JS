@@ -60,16 +60,16 @@ async function getData(val1 = undefined, val2 = undefined) {
     for (let i = 0; i < filter.length; i++) {
       arrivalsContainer.innerHTML += `
         <div
-            class="arrival-card rounded-md /shadow-md border-gray-500 flex flex-col max-h-96 h-96 min-h-96 items-center w-full relative cursor-pointer">
+            class="arrival-card /shadow-md border-gray-500 flex flex-col max-h-96 h-96 min-h-96 items-center w-full relative cursor-pointer">
             <p class="z-5 font-bold text-white absolute text-2xl text-shadow-lg top-0 left-0 -rotate-45">
               NEW!
             </p>
-            <div class=" w-3/4 overflow-hidden grow h-100 mt-5 ">
+            <div class=" w-3/4 overflow-hidden grow h-100 mt-5 rounded-t-2xl">
               <img class="object-cover h-full m-auto" src="../${filter[i].image}" alt="">
             </div>
-            <div class="w-full flex flex-col items-center bg-white shadow-2xl">
-              <h3 class="text-center font-bold rounded-2xl text-md ">${filter[i].name}</h3>
-              <span class="w-fit text-center bg-main text-xl p-1 text-white font-bold absolute right-0 top-65">
+            <div class="w-full flex flex-col items-center bg-white shadow-lg">
+              <h3 class="text-center font-bold rounded-2xl text-xl ">${filter[i].name}</h3>
+              <span class="w-fit text-center bg-main text-xl p-1 text-secondary font-bold absolute right-0 top-65">
               ${filter[i].price} LE</span>
               <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">
                 Add to cart</button>
@@ -94,7 +94,7 @@ async function getData(val1 = undefined, val2 = undefined) {
     for (let i = 0; i < filter.length; i++) {
       offerContainer.innerHTML += `
           <div
-            class="offer-card  text-xl xlg:text-2xl rounded-md /shadow-md border-gray-500 flex flex-col max-h-96 h-96 min-h-96 items-center w-full relative  cursor-pointer">
+            class="offer-card   rounded-md /shadow-md border-gray-500 flex flex-col max-h-96 h-96 min-h-96 items-center w-full relative  cursor-pointer">
             <p class="z-5 font-bold text-red-600 absolute text-2xl text-shadow-lg top-0 -left-5 -rotate-45">
               LIMITED!
             </p>
@@ -102,7 +102,7 @@ async function getData(val1 = undefined, val2 = undefined) {
               <img class="object-cover h-full m-auto" src="../${filter[i].image}" alt="">
             </div>
             <div class="w-full flex flex-col items-center bg-white shadow-2xl">
-              <h3 class="text-center font-bold rounded-2xl text-md ">${filter[i].name}</h3>
+              <h3 class="text-center font-bold rounded-2xl text-xl ">${filter[i].name}</h3>
               <div class="absolute  top-65 flex ">
                 <p class="timer p-1 w-full grow text-main font-bold text-center bg-white px-2">
                   00:00:00</p>
@@ -111,9 +111,8 @@ async function getData(val1 = undefined, val2 = undefined) {
                 <span class="w-fit text-center bg-main p-1 text-white font-bold whitespace-nowrap">
                 ${filter[i].price - (filter[i].price * filter[i].discount)}  LE</span>
               </div>
-              <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">Add
-                to
-                cart</button>
+              <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">
+                Add to cart</button>
             </div>
             <div class="h-20 w-full absolute overflow-hidden ">
               <div class="w-15 h-30 bg-main absolute -top-10 -left-5 rotate-45 flex">
