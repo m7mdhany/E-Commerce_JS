@@ -5,17 +5,11 @@ if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
 let logo = document.querySelector(".logo_bar")
 logo.addEventListener("click", () => { location.assign("../index.html") })
 
-let signInForm = document.getElementById("signIn")
 let signUpForm = document.getElementById("signUp")
-let formSignLink = document.getElementById("signForm")
 let formRegLink = document.getElementById("regForm")
 let showPass = document.querySelectorAll(".passDiv i")
-// localStorage.clear()
-
-localStorage.setItem("alaa_elmlah@gmail.com", "alaa_elmlah@gmail.com")
 
 // sign up
-
 let userPattern = /^[A-Za-z0-9_]{8,16}$/;
 let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let passPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])\S{8,16}$/
@@ -90,6 +84,25 @@ upBtn.addEventListener("click", function () {
     };
     localStorage.setItem(username.value, JSON.stringify(userData));
     localStorage.setItem(email.value, email.value);
+    sessionStorage.setItem("online", username.value)
+    signUpForm.remove()
+
+    let text = "Account Created...".split("")
+    console.log(text);
+    let form = document.querySelector(".sup_form")
+    form.innerHTML = ``
+    form.className = "new-form "
+    text.forEach((t, i) => {
+      setTimeout(() => {
+        form.innerHTML += t
+        if (i = text.length) {
+          setTimeout(() => {
+            location.replace("../index.html")
+          }, text.length * 200 + 500)
+        }
+      }, i * 200);
+    });
+
     inputs.forEach(function (i) {
       i.value = ""
     })
@@ -133,7 +146,9 @@ formRegLink.addEventListener("click", function () {
 })
 
 document.addEventListener("keydown", function (e) {
-if (e.key === "Enter") {
-  upBtn.click();
-}
+  if (e.key === "Enter") {
+    upBtn.click();
+  }
 });
+
+

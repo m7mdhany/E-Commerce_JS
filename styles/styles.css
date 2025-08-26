@@ -244,3 +244,10 @@ form {
 .display_form {
   display: flex;
 }
+
+.new-form {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-size: 2rem;
+}

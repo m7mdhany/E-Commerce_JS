@@ -17,7 +17,8 @@ let sideCats = document.querySelectorAll(".side-categories button")
 console.log(sideCats);
 let res = Array.from(sideCats).find(item => item.innerText === sessionStorage.getItem("cat"))
 console.log(res);
-!res.parentElement.classList.add("bg-main", "w-[115%]")
+if (res) {res.parentElement.classList.add("bg-main", "w-[115%]") }
+
 
 // main f
 let filter = []

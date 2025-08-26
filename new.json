@@ -1,0 +1,26 @@
+{
+  "name": "Sharp Front Load Washing Machine",
+  "Type": "Washing Machine",
+  "price": 31499,
+  "stock": 40,
+  "discount": 0,
+  "Capacity": "9 KG",
+  "Dimensions": "W x H x D : 597 x 845 x 582",
+  "Color": "Black",
+  "category": "Home Appliances",
+  "subcategory": "Large",
+  "image": "Assets/products/home/"
+},
+{
+  "name": "Front Load Washing Machine",
+  "Type": "Washing Machine",
+  "price": 17299,
+  "stock": 35,
+  "discount": 0,
+  "Capacity": "7 KG",
+  "Dimensions": "W x H x D : 597x 845 x 527",
+  "Color": "Silver",
+  "category": "Home Appliances",
+  "subcategory": "Large",
+  "image": "Assets/products/home/"
+}

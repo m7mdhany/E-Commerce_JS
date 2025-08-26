@@ -1,7 +1,7 @@
 if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
-  location.replace("http://127.0.0.1:5500/home.html")
+  location.replace("../index.html")
 }
-
+  
 
 let signInForm = document.getElementById("signIn")
 let signUpForm = document.getElementById("signUp")
