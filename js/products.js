@@ -9,8 +9,9 @@ let allCart = []
 if (sessionStorage.getItem("cart")) {
   allCart = [...sessionStorage.getItem("cart").split(",")]
 }
-
-
+window.addEventListener("load", function () {
+  localStorage.setItem("cat", "");
+});
 // main f
 let filter = []
 let search = false
@@ -46,25 +47,62 @@ async function getData() {
     }
 
 
-    startFilter = function (val) {
-      if (filterRule == "cat") {
-        searchFilter.value = ""
-        if (val != "") {
-          val = localStorage.getItem("cat")
-        }
-        filter = products.filter(obj =>
-          Object.values(obj).includes(val))
-      } else if (filterRule == "sort") {
-        if (localStorage.getItem("cat")) {
-          val = localStorage.getItem("cat")
-        } else if (search == true) {
-        }
-        else { val = "" }
-        filter = products.filter(obj =>
-          Object.values(obj).includes(val))
-      } else if (filterRule == "search") {
-        filter = val
+    startFilter = function (val, key) {
+      if (val != "") {
+        val = localStorage.getItem("cat")
       }
+      if (search == false) {
+        document.querySelector(".item-search").value = ""
+        filter = products.filter(obj => {
+          if (!val) return true;
+          return Object.values(obj).includes(val);
+        });
+      }
+
+      if (filterRule == "sort") {
+        if (key === "1") {
+          filter.sort((a, b) => a.price - b.price);
+          console.log(filter);
+        } else if (key === "2") {
+          filter.sort((a, b) => b.price - a.price);
+          console.log(filter);
+        } else if (key === "3") {
+          filter.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (key === "4") {
+          filter.sort((a, b) => b.name.localeCompare(a.name));
+        }
+      } else if (search == true) {
+        filter = key
+      }
+
+
+      // if (filterRule == "cat") {
+      //   searchFilter.value = ""
+      //   if (val != "") {
+      //     val = localStorage.getItem("cat")
+      //   }
+      //   filter = products.filter(obj =>
+      //     Object.values(obj).includes(val))
+      //   console.log(filter);
+      // } else
+      // if (filterRule == "sort") {
+      //   if (localStorage.getItem("cat")) {
+      //     val = localStorage.getItem("cat")
+      //     filter = products.filter(obj =>
+      //       Object.values(obj).includes(val))
+      //   } else if (search == true) {
+      //     filter = val
+      //   }
+      //   else {
+      //     val = ""
+      //     filter = products.filter(obj =>
+      //       Object.values(obj).includes(val))
+      //   }
+
+      // } else if (filterRule == "search") {
+      //   filter = val
+      // }
+
       // if (localStorage.getItem("cat")) {
       //   val = localStorage.getItem("cat")
       // }
@@ -80,15 +118,19 @@ async function getData() {
       // } else if (typeof val == "object") {
       //   filter = val
       // }
+
       cardContainer.innerHTML = ``
-      if (val) {
-        for (let i = 0; i < filter.length; i++) {
-          cardContainer.innerHTML += allProducts(filter, i)
-        }
-      } else {
-        for (let i = 0; i < products.length; i++) {
-          cardContainer.innerHTML += allProducts(products, i)
-        }
+      // if (val) {
+      //   for (let i = 0; i < filter.length; i++) {
+      //     cardContainer.innerHTML += allProducts(filter, i)
+      //   }
+      // } else {
+      //   for (let i = 0; i < products.length; i++) {
+      //     cardContainer.innerHTML += allProducts(products, i)
+      //   }
+      // }
+      for (let i = 0; i < filter.length; i++) {
+        cardContainer.innerHTML += allProducts(filter, i)
       }
       addToCart()
     }
@@ -127,7 +169,7 @@ async function getData() {
       })
       // .map(obj => obj.name) 
       filterRule = "search"
-      startFilter(filterProducts)
+      startFilter("cat", filterProducts)
     })
 
 
@@ -137,20 +179,23 @@ async function getData() {
     //  sorting
     let sorter = document.querySelector(".sorter")
     sorter.addEventListener("change", function () {
+      let items = []
+      if (search == true) { items = filter } else { items = products }
       filterRule = "sort"
-      if (sorter.value === "1") {
-        products.sort((a, b) => a.price - b.price);
-        startFilter(products)
-      } else if (sorter.value === "2") {
-        products.sort((a, b) => b.price - a.price);
-        startFilter(products)
-      } else if (sorter.value === "3") {
-        products.sort((a, b) => a.name.localeCompare(b.name));
-        startFilter(products)
-      } else if (sorter.value === "4") {
-        products.sort((a, b) => b.name.localeCompare(a.name));
-        startFilter(products)
-      }
+      // if (sorter.value === "1") {
+      //   items.sort((a, b) => a.price - b.price);
+      //   startFilter(items)
+      // } else if (sorter.value === "2") {
+      //   items.sort((a, b) => b.price - a.price);
+      //   startFilter(items)
+      // } else if (sorter.value === "3") {
+      //   filter.sort((a, b) => a.name.localeCompare(b.name));
+      //   startFilter(items)
+      // } else if (sorter.value === "4") {
+      //   items.sort((a, b) => b.name.localeCompare(a.name));
+      //   startFilter(items)
+      // }
+      startFilter("cat", sorter.value)
     })
     // product card page
     let allCards = document.querySelectorAll(".card img")
@@ -212,6 +257,7 @@ sideBar.forEach((element, i) => {
     if (target == "All Products") { target = "" }
     localStorage.setItem("cat", target)
     filterRule = "cat"
+    search = false
     startFilter(target);
   })
 })
