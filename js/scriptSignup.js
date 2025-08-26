@@ -132,3 +132,8 @@ formRegLink.addEventListener("click", function () {
   location.assign("login.html")
 })
 
+document.addEventListener("keydown", function (e) {
+if (e.key === "Enter") {
+  upBtn.click();
+}
+});
