@@ -119,15 +119,20 @@
             </section>
             <div class="w-full">
               <!-- top -->
-              <section class=" min-h-10 bg-white border-gray-300 p-2 flex justify-end gap-10 text-xl">
-                <p>Sort by</p>
-                <select class="border w-1/6 sorter">
-                  <option value="" disabled selected>Choose</option>
-                  <option value="1">Price ↑</option>
-                  <option value="2">Price ↓</option>
-                  <option value="3">Name A → Z</option>
-                  <option value="4">Name Z → A</option>
-                </select>
+              <section class=" min-h-10 bg-white border-gray-300 p-2 flex justify-between gap-10 text-xl px-5">
+                <div class=" w-1/2">
+                  <input class="item-search text-sm w-full p-1 rounded-sm border" placeholder="Search" type="search">
+                </div>
+                <div class="flex w-fit gap-2">
+                  <p>Sort by</p>
+                  <select class="border w-100 sorter">
+                    <option value="" disabled selected>Choose</option>
+                    <option value="1">Price ↑</option>
+                    <option value="2">Price ↓</option>
+                    <option value="3">Name A → Z</option>
+                    <option value="4">Name Z → A</option>
+                  </select>
+                </div>
               </section>
               <!-- product cards -->
               <div id="cardContainer"
