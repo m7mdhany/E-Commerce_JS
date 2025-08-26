@@ -11,11 +11,9 @@ async function getData(val = undefined, key) {
     const response = await fetch("../data.json");
     const data = await response.json();
     products = data.products
-
-    let filter = val.map(v =>
-      products.find(obj => Object.values(obj).includes(v))
-    ).filter(Boolean);
-
+    let filter = val.flatMap(v =>
+      products.filter(obj => Object.values(obj).includes(v))
+    );
     let product = filter
     if (!sessionStorage.getItem("cart")) {
       cartContainer.innerHTML = `
@@ -137,5 +135,49 @@ async function getData(val = undefined, key) {
     // productCard.innerHTML = `ERROR 404`
   }
 }
+
 if (!sessionStorage.getItem("cart")) { sessionStorage.setItem("cart", "") }
 getData([...sessionStorage.getItem("cart").split(",")])
+
+
+
+
+
+let btnPlace = document.querySelector(".btn-place")
+let orderMsg = document.querySelector(".order-msg")
+btnPlace.addEventListener("click", function () {
+
+  let notif = document.createElement("div")
+  notif.className = "order-msg  h-50 w-100 bg-secondary/100 rounded-md text-white fixed top-2/4 text-5xl  scale-0 opacity-0 transition left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-300 z-50 flex justify-center items-center shadow-2xl border-main border-4"
+  notif.innerText = "Order Placed!"
+
+  let cartBody = document.querySelector(".cart-body")
+  cartBody.prepend(notif)
+
+  setTimeout(() => {
+    notif.classList.remove("opacity-0", "scale-0")
+  }, 10)
+  setTimeout(() => {
+    notif.classList.remove("opacity-1", "scale-100")
+    notif.classList.add("opacity-0", "scale-0")
+  }, 4000)
+
+  setTimeout(() => {
+    notif.remove()
+  }, 5000)
+  sessionStorage.removeItem("CartN")
+  sessionStorage.setItem("cart", "")
+  document.querySelector(".total-sum-price").innerHTML = 0
+  document.querySelector(".total-sum-price-f").innerHTML = 0
+  document.querySelector(".items-total").innerText = 0
+  document.querySelector(".cart-number").innerText = ""
+  document.querySelector(".cart-container").innerHTML = `
+      <div class="flex h-full w-full flex-col">
+      <p class="text-6xl  flex items-center justify-center h-full text-secondary ">Cart is empty !</p>
+      <a class="underline text-secondary text-xl" href="products.html" >Continue Shopping!</a>
+      </div>
+      `
+})
+
+
+

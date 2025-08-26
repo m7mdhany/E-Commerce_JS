@@ -34,3 +34,20 @@ btnPlace.addEventListener("click", function () {
       </div>
       `
 })
+
+let btnCart = document.querySelectorAll(".btn-cart")
+console.log(btnCart);
+for (btn in btnCart) {
+  btn.addEventListener("click", function () {
+    let notifCont = document.createElement("div")
+    let notif = document.createElement("div")
+    notif.className = "order-msg w-100 h-30 rounded-2xl  bg-main/50 text-white fixed top-2/4 text-5xl transition right-40 transform translate-x-1/2 /-translate-y-1/2 duration-300 z-50 flex justify-start pl-7 items-center shadow-2xl border-main border-4"
+    notif.innerText = "Order Placed!"
+
+    let prodsBody = document.querySelector(".prds-body")
+    prodsBody.appendChild(notifCont)
+    notifCont.appendChild(notif)
+
+
+  })
+}

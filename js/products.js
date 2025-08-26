@@ -208,22 +208,51 @@ async function getData() {
 
     // add to cart page
     function addToCart() {
+      // let notifCont = document.createElement("div")
+      // notifCont.className = "fixed border w-fit top-50 text-5xl transition -right-30 z-50 relative w-96 h-96 bg-main"
+      let test = document.querySelector(".notif-cont")
+      let prodsBody = document.querySelector(".prds-body")
+      // prodsBody.prepend(notifCont)
       let btnCart = document.querySelectorAll(".btn-cart")
       btnCart.forEach(item => item.addEventListener("click", function () {
         let cart = this.parentElement.querySelector(".p-name").innerText
         let cartNumber = document.querySelector(".cart-number")
         let cartN = sessionStorage.getItem("CartN")
+
+
+        let notif = document.createElement("div")
+        notif.className = "order-msg w-50 h-20 rounded-l-2xl relative top-0 -right-500 bg-main/70 text-white transform transition-all duration-300 z-50 flex justify-center items-center shadow-xl"
+        if (!allCart.includes(cart)) {
+          notif.innerText = "Item added!"
+        } else {
+          notif.innerText = "Already in cart!"
+          notif.classList.remove("bg-main/50")
+          notif.classList.add("bg-red-500/50")
+        }
+        test.appendChild(notif)
+        setTimeout(() => {
+          notif.classList.add("right-0")
+        }, 10)
+        setTimeout(() => {
+          notif.classList.remove("right-0")
+          setTimeout(() => {
+            notif.classList.add("hidden")
+          }, 300)
+        }, 3000)
+        setTimeout(() => {
+          notif.remove()
+        }, 4000)
+
+        // add to cart
         if (!allCart.includes(cart)) {
           cartN++
           allCart.push(cart)
-          console.log(allCart);
         }
         sessionStorage.setItem("cart", allCart)
         sessionStorage.setItem("CartN", cartN)
         cartNumber.innerText = sessionStorage.getItem("CartN")
       }))
     }
-    addToCart()
 
 
 
@@ -274,3 +303,19 @@ goUp.addEventListener("click", function () {
 });
 
 
+let btnCart = document.querySelectorAll(".btn-cart")
+console.log(btnCart);
+for (btn of btnCart) {
+  btn.addEventListener("click", function () {
+    let notifCont = document.createElement("div")
+    let notif = document.createElement("div")
+    notif.className = "order-msg w-100 h-30 rounded-2xl  bg-main/50 text-white fixed top-2/4 text-5xl transition right-40 transform translate-x-1/2 /-translate-y-1/2 duration-300 z-50 flex justify-start pl-7 items-center shadow-2xl border-main border-4"
+    notif.innerText = "Order Placed!"
+
+    let prodsBody = document.querySelector(".prds-body")
+    prodsBody.prepend(notifCont)
+    notifCont.prepend(notif)
+
+
+  })
+}

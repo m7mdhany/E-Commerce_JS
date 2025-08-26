@@ -177,9 +177,35 @@ async function getData(val1 = undefined, val2 = undefined) {
 
     let btnCart = document.querySelectorAll(".btn-cart")
     btnCart.forEach(item => item.addEventListener("click", function () {
+      let test = document.querySelector(".notif-cont")
       let cart = this.parentElement.parentElement.querySelector("h3").innerText
       let cartNumber = document.querySelector(".cart-number")
       let cartN = sessionStorage.getItem("CartN")
+
+
+      let notif = document.createElement("div")
+      notif.className = "order-msg w-50 h-20 rounded-l-2xl relative top-0 -right-500 bg-main/70 text-white transform transition-all duration-300 z-50 flex justify-center items-center shadow-xl"
+      if (!allCart.includes(cart)) {
+        notif.innerText = "Item added!"
+      } else {
+        notif.innerText = "Already in cart!"
+        notif.classList.remove("bg-main/50")
+        notif.classList.add("bg-red-500/50")
+      }
+      test.appendChild(notif)
+      setTimeout(() => {
+        notif.classList.add("right-0")
+      }, 10)
+      setTimeout(() => {
+        notif.classList.remove("right-0")
+        setTimeout(() => {
+          notif.classList.add("hidden")
+        }, 300)
+      }, 3000)
+      setTimeout(() => {
+        notif.remove()
+      }, 4000)
+
       if (!allCart.includes(cart)) {
         cartN++
         allCart.push(cart)
@@ -189,23 +215,6 @@ async function getData(val1 = undefined, val2 = undefined) {
       sessionStorage.setItem("CartN", cartN)
       cartNumber.innerText = sessionStorage.getItem("CartN")
     }))
-
-
-
-    // let btnCart = document.querySelectorAll(".btn-cart")
-    // btnCart.forEach(item => item.addEventListener("click", function () {
-    //   let cart = this.parentElement.querySelector(".p-name").innerText
-    //   let cartNumber = document.querySelector(".cart-number")
-    //   let cartN = sessionStorage.getItem("CartN")
-    //   if (!allCart.includes(cart)) {
-    //     cartN++
-    //     allCart.push(cart)
-    //     console.log(allCart);
-    //   }
-    //   sessionStorage.setItem("cart", allCart)
-    //   sessionStorage.setItem("CartN", cartN)
-    //   cartNumber.innerText = sessionStorage.getItem("CartN")
-    // }))
 
 
 
