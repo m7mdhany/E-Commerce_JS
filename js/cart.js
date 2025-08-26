@@ -30,7 +30,7 @@ async function getData(val = undefined, key) {
     document.querySelector(".items-total").innerText = product.length
     for (let i = 0; i < product.length; i++) {
       cartContainer.innerHTML += `
-              <div class=" cart-card /border-b min-h-20 h-20 grid grid-cols-15 justify-center items-center gap-5 bg-gray-100">
+              <div class=" cart-card /border-b min-h-20 h-20 grid grid-cols-15 justify-center pr-2 items-center gap-5 bg-gray-100">
                 <div class="w-full h-20 col-span-3  p-1 cursor-pointer prod-item">
                   <img class="w-full object-contain object-top h-full bg-white  border-x-2" src="../${product[i].image}" alt="">
                 </div>
@@ -147,6 +147,7 @@ let btnPlace = document.querySelector(".btn-place")
 let orderMsg = document.querySelector(".order-msg")
 btnPlace.addEventListener("click", function () {
 
+
   let notif = document.createElement("div")
   notif.className = "order-msg  h-50 w-100 bg-secondary/100 rounded-md text-white fixed top-2/4 text-5xl  scale-0 opacity-0 transition left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-300 z-50 flex justify-center items-center shadow-2xl border-main border-4"
   notif.innerText = "Order Placed!"
@@ -165,6 +166,18 @@ btnPlace.addEventListener("click", function () {
   setTimeout(() => {
     notif.remove()
   }, 5000)
+
+  remove()
+  document.querySelector(".cart-clear").classList.add("hidden")
+
+})
+
+document.querySelector(".cart-clear").addEventListener("click", function()  {
+  this.classList.add("hidden")
+  remove()
+})
+
+function remove() {
   sessionStorage.removeItem("CartN")
   sessionStorage.setItem("cart", "")
   document.querySelector(".total-sum-price").innerHTML = 0
@@ -177,7 +190,4 @@ btnPlace.addEventListener("click", function () {
       <a class="underline text-secondary text-xl" href="products.html" >Continue Shopping!</a>
       </div>
       `
-})
-
-
-
+}

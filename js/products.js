@@ -6,12 +6,19 @@ if (sessionStorage.getItem("CartN") > 0) {
   cartNumber.innerText = sessionStorage.getItem("CartN")
 }
 let allCart = []
-if (sessionStorage.getItem("cart")) {
-  allCart = [...sessionStorage.getItem("cart").split(",")]
+if (sessionStorage.getItem("cat")) {
+  allCart = [...sessionStorage.getItem("cat").split(",")]
 }
 window.addEventListener("load", function () {
-  localStorage.setItem("cat", "");
+  // sessionStorage.setItem("cat", "");
 });
+// add color for selected cat
+let sideCats = document.querySelectorAll(".side-categories button")
+console.log(sideCats);
+let res = Array.from(sideCats).find(item => item.innerText === sessionStorage.getItem("cat"))
+console.log(res);
+!res.parentElement.classList.add("bg-main", "w-[115%]")
+
 // main f
 let filter = []
 let search = false
@@ -49,7 +56,7 @@ async function getData() {
 
     startFilter = function (val, key) {
       if (val != "") {
-        val = localStorage.getItem("cat")
+        val = sessionStorage.getItem("cat")
       }
       if (search == false) {
         document.querySelector(".item-search").value = ""
@@ -79,15 +86,15 @@ async function getData() {
       // if (filterRule == "cat") {
       //   searchFilter.value = ""
       //   if (val != "") {
-      //     val = localStorage.getItem("cat")
+      //     val = sessionStorage.getItem("cat")
       //   }
       //   filter = products.filter(obj =>
       //     Object.values(obj).includes(val))
       //   console.log(filter);
       // } else
       // if (filterRule == "sort") {
-      //   if (localStorage.getItem("cat")) {
-      //     val = localStorage.getItem("cat")
+      //   if (sessionStorage.getItem("cat")) {
+      //     val = sessionStorage.getItem("cat")
       //     filter = products.filter(obj =>
       //       Object.values(obj).includes(val))
       //   } else if (search == true) {
@@ -103,11 +110,11 @@ async function getData() {
       //   filter = val
       // }
 
-      // if (localStorage.getItem("cat")) {
-      //   val = localStorage.getItem("cat")
+      // if (sessionStorage.getItem("cat")) {
+      //   val = sessionStorage.getItem("cat")
       // }
       // if (typeof val != "object") {
-      //   if (!localStorage.getItem("cat")) { val = "" }
+      //   if (!sessionStorage.getItem("cat")) { val = "" }
       //   if (val !== "sort") {
       //     filter = products.filter(obj =>
       //       Object.values(obj).includes(val))
@@ -134,7 +141,7 @@ async function getData() {
       }
       addToCart()
     }
-    startFilter()
+    startFilter("cat")
 
 
 
@@ -160,7 +167,7 @@ async function getData() {
       search = true
       if (this.value < 1) { search = false }
       resetSideBar()
-      localStorage.removeItem("cat")
+      sessionStorage.removeItem("cat")
       let value = this.value.toLowerCase().trim();
       let filterProducts = products.filter((obj) => {
         return Object.values(obj).some((val) => {
@@ -266,25 +273,22 @@ async function getData() {
 // cats filter
 
 
-getData(localStorage.getItem("cat"))
+getData(sessionStorage.getItem("cat"))
 let cartAdd = document.querySelectorAll("cartAdd")
 
 
 // side bar cat
 let sideBar = document.querySelectorAll(".side-categories div div")
 sideBar.forEach((element, i) => {
-  let lastElement
   let target = document.querySelectorAll(".side-categories button")[i].innerHTML
   element.addEventListener("click", function () {
     sideBar.forEach((element) => {
       element.classList.remove("bg-main", "w-full", "w-[115%]")
     })
     this.classList.add("bg-main", "w-[115%]")
-    // this.classList.toggle("w-[120%]")
-    // this.classList.add("bg-main")
     lastElement = this
     if (target == "All Products") { target = "" }
-    localStorage.setItem("cat", target)
+    sessionStorage.setItem("cat", target)
     filterRule = "cat"
     search = false
     startFilter(target);
@@ -304,7 +308,6 @@ goUp.addEventListener("click", function () {
 
 
 let btnCart = document.querySelectorAll(".btn-cart")
-console.log(btnCart);
 for (btn of btnCart) {
   btn.addEventListener("click", function () {
     let notifCont = document.createElement("div")

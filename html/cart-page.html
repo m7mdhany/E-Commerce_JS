@@ -34,7 +34,7 @@
           <a href="../index.html" class="h-full w-full absolute"></a>
           <p class="text-main text-5xl font-bold">E-Market</p>
         </div>
-        <div class="flex gap-10 text-xl items-center grow px-20 justify-end">
+        <div class="flex gap-10 text-xl items-center grow justify-end ">
           <a class="hover:underline" href="../index.html">Home</a>
           <a class="hover:underline" href="products.html">Products</a>
         </div>
@@ -65,7 +65,7 @@
       <!-- products -->
       <section class="flex justify-center w-full h-full items-center relative">
         <div class="h-3/4 w-3/4 min-h-[400px] bg-white shadow-2xl flex">
-          <div class="h-full w-3/4 p-10">
+          <div class="h-full w-3/4 pt-10 pl-10 pr-5 pb-5 flex flex-col">
             <h3 class="text-3xl mb-5 col-span-6">Shopping Cart</h3>
             <div class="w-full border mb-2 border-gray-300"></div>
             <div class="grid grid-cols-15 justify-center items-center">
@@ -74,7 +74,7 @@
               <p class="col-span-2 text-center">Price</p>
               <p class="col-span-2 text-center">Total</p>
             </div>
-            <div class="cart-container min-h-70 h-70 scroll-smooth scroll-box flex flex-col overflow-y-auto p-1 gap-1">
+            <div class="cart-container grow  scroll-smooth scroll-box flex flex-col overflow-y-auto p-1 gap-1">
               <!-- cart card -->
               <!-- <div class=" cart-card border min-h-40 h-40 grid grid-cols-15 justify-center items-center text-2xl gap-5">
                 <div class="w-full h-40 col-span-3  p-2">
@@ -96,6 +96,7 @@
                 </div>
               </div> -->
             </div>
+            <button class="cart-clear underline flex justify-end cursor-pointer">Clear cart!</button>
           </div>
           <div class="h-full w-1/4 bg-gray-200 p-10 flex flex-col gap-5">
             <h3 class="text-2xl whitespace-nowrap">Order Summary</h3>

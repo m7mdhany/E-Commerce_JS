@@ -89,3 +89,8 @@ formSignLink.addEventListener("click", function () {
   location.assign("signup.html")
 })
 
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    signBtn.click();
+  }
+});

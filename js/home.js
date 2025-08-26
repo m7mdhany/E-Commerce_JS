@@ -26,13 +26,14 @@ goUp.addEventListener("click", function () {
 let catLinks = document.querySelectorAll(".cat-link")
 catLinks.forEach((item, i) => item.addEventListener("click", () => {
   let cat = document.querySelectorAll(".cat-link h3")[i].innerText
-  localStorage.setItem("cat", cat)
+  console.log(cat);
+  sessionStorage.setItem("cat", cat)
   location.assign("html/products.html")
 }))
 
 let allCart = []
-if (sessionStorage.getItem("cart")) {
-  allCart = [...sessionStorage.getItem("cart").split(",")]
+if (sessionStorage.getItem("cat")) {
+  allCart = [...sessionStorage.getItem("cat").split(",")]
 }
 
 // new arrivals cards
