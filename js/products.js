@@ -92,50 +92,6 @@ async function getData() {
               </div>
             `
     }
-
-    // search filter on demand ----------------------------------------------------
-    let searchFilter = document.querySelector(".item-search")
-    let searchBtns = document.querySelectorAll(".search-btns")
-    searchBtns = Array.from(searchBtns)
-    searchBtns.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        btn.classList.toggle("bg-main")
-        let text = btn.innerText.toLowerCase()
-        if (!searchItems.includes(text)) {
-          searchItems.push(text)
-        } else {
-          searchItems = searchItems.filter(item => item !== text);
-        }
-      });
-    });
-    searchFilter.addEventListener("input", function () {
-      search = true
-      if (this.value.length < 1) { search = false }
-      resetSideBar()
-      sessionStorage.removeItem("cat")
-      let value = this.value.toLowerCase().trim();
-      let searchProduct = products.filter((obj) => {
-
-        return searchItems.some((key) =>
-          String(obj[key]).toLowerCase().includes(value)
-        );
-      });
-
-      filterRule = "search"
-      startFilter("cat", searchProduct)
-    })
-
-    //  sorting -----------------------------------------------------------------
-    let sorter = document.querySelector(".sorter")
-    sorter.addEventListener("change", function () {
-      let items = []
-      if (search == true) { items = filter } else { items = products }
-      filterRule = "sort"
-
-      startFilter("cat", sorter.value)
-    })
-
-
     // filtering on demand --------------------------------------------------------
     startFilter = function (val, key) {
       if (val != "") {
@@ -191,6 +147,11 @@ async function getData() {
           });
         })
       }
+      if (filter.length == 0) {
+        document.querySelector(".more-cards").style.display = "none"
+        cardContainer.innerHTML = `<p class="text-2xl w-full color-grey-300">No search results!</p>`
+
+      }
 
       // product card page---------------------------------------------------------
       let allCards = document.querySelectorAll(".card img")
@@ -202,6 +163,54 @@ async function getData() {
       }))
     }
     startFilter("cat")
+
+
+    // search filter on demand ----------------------------------------------------
+    let searchFilter = document.querySelector(".item-search")
+    let searchBtns = document.querySelectorAll(".search-btns")
+    searchBtns = Array.from(searchBtns)
+    searchBtns.forEach((btn) => {
+      filterRule = "search"
+      btn.addEventListener("click", function () {
+        btn.classList.toggle("bg-main")
+        let text = btn.innerText.toLowerCase()
+        if (!searchItems.includes(text)) {
+          searchItems.push(text)
+        } else {
+          searchItems = searchItems.filter(item => item !== text);
+        }
+        searchFilter.value = ""
+      });
+    });
+    searchFilter.addEventListener("input", function () {
+      search = true
+      if (this.value.length < 1) { search = false }
+      resetSideBar()
+      sessionStorage.removeItem("cat")
+      let value = this.value.toLowerCase().trim();
+      let searchProduct = products.filter((obj) => {
+        let keys = searchItems.length ? searchItems : Object.keys(obj);
+        return keys.some((key) =>
+          String(obj[key]).toLowerCase().includes(value)
+        );
+      });
+
+      filterRule = "search"
+      startFilter("cat", searchProduct)
+    })
+
+    //  sorting -----------------------------------------------------------------
+    let sorter = document.querySelector(".sorter")
+    sorter.addEventListener("change", function () {
+      let items = []
+      if (search == true) { items = filter } else { items = products }
+      filterRule = "sort"
+
+      startFilter("cat", sorter.value)
+    })
+
+
+
 
     // add to cart page
     function addToCart() {
