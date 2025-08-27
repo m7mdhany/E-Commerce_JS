@@ -42,10 +42,14 @@ let res = Array.from(sideCats).find(item => item.innerText === sessionStorage.ge
 if (res) { res.parentElement.classList.add("bg-main", "w-[115%]") } else { sideCats[0].parentElement.classList.add("bg-main", "w-[115%]") }
 
 
+
+
 // main f
 let filter = []
 let search = false
 let filterRule = ""
+// send search filter
+let searchItems = []
 async function getData() {
   try {
     // fetch/get api items
@@ -89,26 +93,39 @@ async function getData() {
             `
     }
 
-    // search filter 
-    // this for all keys
+    // search filter on demand ----------------------------------------------------
     let searchFilter = document.querySelector(".item-search")
+    let searchBtns = document.querySelectorAll(".search-btns")
+    searchBtns = Array.from(searchBtns)
+    searchBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        btn.classList.toggle("bg-main")
+        let text = btn.innerText.toLowerCase()
+        if (!searchItems.includes(text)) {
+          searchItems.push(text)
+        } else {
+          searchItems = searchItems.filter(item => item !== text);
+        }
+      });
+    });
     searchFilter.addEventListener("input", function () {
       search = true
-      if (this.value < 1) { search = false }
+      if (this.value.length < 1) { search = false }
       resetSideBar()
       sessionStorage.removeItem("cat")
       let value = this.value.toLowerCase().trim();
-      let filterProducts = products.filter((obj) => {
-        return Object.values(obj).some((val) => {
-          return String(val).toLowerCase().includes(value)
-        })
-      })
-      // .map(obj => obj.name) 
+      let searchProduct = products.filter((obj) => {
+
+        return searchItems.some((key) =>
+          String(obj[key]).toLowerCase().includes(value)
+        );
+      });
+
       filterRule = "search"
-      startFilter("cat", filterProducts)
+      startFilter("cat", searchProduct)
     })
 
-    //  sorting
+    //  sorting -----------------------------------------------------------------
     let sorter = document.querySelector(".sorter")
     sorter.addEventListener("change", function () {
       let items = []
@@ -119,7 +136,7 @@ async function getData() {
     })
 
 
-    // filtering
+    // filtering on demand --------------------------------------------------------
     startFilter = function (val, key) {
       if (val != "") {
         val = sessionStorage.getItem("cat")
@@ -135,7 +152,6 @@ async function getData() {
       if (filterRule == "sort") {
         if (key === "1") {
           filter.sort((a, b) => a.price - b.price);
-          console.log(filter);
         } else if (key === "2") {
           filter.sort((a, b) => b.price - a.price);
           console.log(filter);
@@ -148,7 +164,7 @@ async function getData() {
         filter = key
       }
 
-      // add products of filter
+      // add products of filter-------------------------------------------------------
       cardContainer.innerHTML = ``
       document.querySelector(".results").innerHTML = `Total : <span class="text-sec font-bold" > ${filter.length} Results</span>`
       for (let i = 0; i < filter.length; i++) {
@@ -156,7 +172,7 @@ async function getData() {
       }
       addToCart()
 
-      // show more products button
+      // show more products button------------------------------------------------------
       if (filterRule != "sort") {
         let height = cardContainer.offsetHeight;
         let newH
@@ -176,7 +192,7 @@ async function getData() {
         })
       }
 
-      // product card page
+      // product card page---------------------------------------------------------
       let allCards = document.querySelectorAll(".card img")
       let oneCard = document.querySelectorAll(".card .p-name")
       allCards.forEach((item, i) => item.addEventListener("click", function () {
