@@ -28,10 +28,13 @@ async function getData(val = undefined, key) {
     );
     let product = filter
     if (!sessionStorage.getItem("cart")) {
+      let btnPlace = document.querySelector(".btn-place")
+      btnPlace.disabled = true
+      btnPlace.style.backgroundColor = "grey"
       cartContainer.innerHTML = `
       <div class="flex h-full w-full flex-col">
       <p class="text-6xl  flex items-center justify-center h-full text-secondary ">Cart is empty !</p>
-      <a class="underline text-secondary text-xl" href="products.html" >Continue Shopping!</a>
+      <a class="underline text-secondary text-xl w-fit" href="products.html" >←Continue Shopping</a>
       </div>
       `
     } else {
@@ -148,7 +151,9 @@ async function getData(val = undefined, key) {
   }
 }
 
-if (!sessionStorage.getItem("cart")) { sessionStorage.setItem("cart", "") }
+if (!sessionStorage.getItem("cart")) {
+  sessionStorage.setItem("cart", "")
+}
 getData([...sessionStorage.getItem("cart").split(",")])
 
 
@@ -158,7 +163,6 @@ getData([...sessionStorage.getItem("cart").split(",")])
 let btnPlace = document.querySelector(".btn-place")
 let orderMsg = document.querySelector(".order-msg")
 btnPlace.addEventListener("click", function () {
-
 
   let notif = document.createElement("div")
   notif.className = "order-msg  h-50 w-100 bg-secondary/100 rounded-md text-white fixed top-2/4 text-5xl  scale-0 opacity-0 transition left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-300 z-50 flex justify-center items-center shadow-2xl border-main border-4"
@@ -184,12 +188,15 @@ btnPlace.addEventListener("click", function () {
 
 })
 
-document.querySelector(".cart-clear").addEventListener("click", function()  {
+document.querySelector(".cart-clear").addEventListener("click", function () {
   this.classList.add("hidden")
   remove()
 })
 
 function remove() {
+  let btnPlace = document.querySelector(".btn-place")
+  btnPlace.disabled = true
+  btnPlace.style.backgroundColor = "grey"
   sessionStorage.removeItem("CartN")
   sessionStorage.setItem("cart", "")
   document.querySelector(".total-sum-price").innerHTML = 0
@@ -199,7 +206,7 @@ function remove() {
   document.querySelector(".cart-container").innerHTML = `
       <div class="flex h-full w-full flex-col">
       <p class="text-6xl  flex items-center justify-center h-full text-secondary ">Cart is empty !</p>
-      <a class="underline text-secondary text-xl" href="products.html" >Continue Shopping!</a>
+      <a class="underline text-secondary text-xl w-fit" href="products.html" > ← Continue Shopping</a>
       </div>
       `
 }
