@@ -17,6 +17,9 @@ if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
     location.assign("login.html")
   })
   document.querySelector(".login-warning").style.display = "block"
+  let btnPlace = document.querySelector(".btn-place")
+  btnPlace.disabled = true
+  btnPlace.style.backgroundColor = "grey"
 }
 
 let cartNumber = document.querySelector(".cart-number")

@@ -345,6 +345,12 @@
   .mt-auto {
     margin-top: auto;
   }
+  .mr-5 {
+    margin-right: calc(var(--spacing) * 5);
+  }
+  .mr-20 {
+    margin-right: calc(var(--spacing) * 20);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -353,6 +359,12 @@
   }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
+  }
+  .ml-10 {
+    margin-left: calc(var(--spacing) * 10);
+  }
+  .ml-20 {
+    margin-left: calc(var(--spacing) * 20);
   }
   .block {
     display: block;
