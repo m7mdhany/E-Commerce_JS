@@ -55,11 +55,12 @@ async function getData(val = undefined, key) {
       let p2 = document.createElement("p")
       if (key == "name" || key == "image" || key == "discount") {
       } else {
-        if (key == "price"){
-          p2.innerHTML = `: ${product[key]} LE`
-        }else{
-          p2.innerHTML = `: ${product[key]}`}
-          
+        if (key == "price") {
+          p2.innerHTML = ": " + `${product[key]} LE`
+        } else {
+          p2.innerHTML = ": " + `${product[key]}`
+        }
+
         p1.innerHTML = `${key}`
         productDetailsKey.appendChild(p1)
         productDetailsValue.appendChild(p2)

@@ -37,12 +37,8 @@ function moveToIndex(index) {
 }
 
 
-
-
-
 let sliderSlice = document.querySelectorAll(".slider")
 let sectionIndex = 1
-
 
 let timeOuts = []
 
@@ -128,9 +124,8 @@ sliderContainer.addEventListener("transitionend", () => {
     updateIndicators()
   }
 })
-// console.log(sliderContainer.children);
 // ---------------------------------------------------------------------------------
-
+// indicators
 let indicatorsContainer = document.querySelector(".indicators")
 let indicators = []
 let indicator = document.querySelectorAll(".indicators div")[0]
@@ -169,7 +164,7 @@ function updateIndicators() {
     indi.classList.toggle('bg-gray-400', idx + 1 != currentIndex)
   })
 }
-
+// slider navigation
 let slidBtn = document.querySelectorAll(".go-slide")
 
 for (let i = 0; i < slidBtn.length; i++) {
@@ -191,9 +186,3 @@ for (let i = 0; i < slidBtn.length; i++) {
     }
   })
 }
-
-// // var btns = document.querySelectorAll(".comments button")
-// // var pBtn = btns[0]
-// // var nBtn = btns[1]
-// var allC = document.getElementsByClassName("allC")[0]
-// var sliders = document.getElementsByClassName("sliderSection")
