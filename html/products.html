@@ -60,8 +60,8 @@
               <span>Login</span>
             </a>
             <p>Welcome, <span id="navUser" class="text-sec font-bold">Guest</span></p>
-            <a href="login.html" class="text-white! hidden signout bg-main px-4 py-1 rounded-lg hover:bg-secondary ">
-              <i class="fa-solid fa-right-from-bracket text-white"></i>
+            <a href="login.html" class="text-white! hidden signout">
+              <i class="fa-solid fa-right-from-bracket text-secondary!"></i>
             </a>
           </div>
         </div>
@@ -73,10 +73,10 @@
       <section class="flex items-cednter  my-5 m-auto gap-10 flex-col">
         <!-- <h2 class="text-5xl font-bold text-center uppercase ">Our Products</h2> -->
         <div class="h-full mx-7 flex flex-col gap-5">
-          <div class=" flex h-full gap-2">
+          <div class=" flex h-full gap-2 w-full">
             <!-- side -->
             <section
-              class="side-categories w-1/8 md:w-2/10 h-full px-5 flex flex-col gap-2 bg-white  border-gray-300 p-2">
+              class="side-categories w-1/8 min-w-[230px] md:w-2/10 h-full px-5 flex flex-col gap-2 bg-white  border-gray-300 p-2">
               <h4 class="text-2xl  p-2 border-gray-300">Categories</h4>
               <div class="w-full font-medium">
                 <div class="border-t-2 w-full text-start p-1 border-gray-300">
@@ -130,12 +130,12 @@
                 </div>
               </div>
             </section>
-            <div class="w-full">
+            <div class="w-full h-fit">
               <!-- top -->
               <section class="  bg-white border-gray-300 flex justify-between p-1 gap-10 px-5">
                 <div class="w-1/2 flex">
-                  <input class="item-search text-sm w-full p-1 rounded-sm bg-gray-100" placeholder="Search"
-                    type="search">
+                  <input class="item-search text-sm w-full p-1 rounded-sm bg-gray-100"
+                    placeholder="Search by name or categories - food / tomato" type="search">
                 </div>
                 <div class="flex w-fit gap-2 text-sm items-center">
                   <p class="whitespace-nowrap">Sort by</p>
@@ -148,15 +148,16 @@
                   </select>
                 </div>
               </section>
+              <p class="results px-2 pt-5">Results</p>
               <!-- product cards -->
               <div id="cardContainer"
-                class="h-full m-auto transform-3d p-10 grid md:grid-cols-4 2xl:grid-cols-6 w-full gap-4 justify-center">
+                class="h-full /max-h-[1500px] m-auto transform-3d p-10 grid md:grid-cols-4 2xl:grid-cols-6 w-full gap-4 justify-center /overflow-y-auto /scroll-box overflow-hidden transition-all duration-500">
                 <!-- card -->
-
+              </div>
+              <div class="w-full flex justify-center">
+                <button class="more-cards cursor-pointer font-bold border p-2 rounded-lg mt-5">show more ↓</button>
               </div>
             </div>
-
-
           </div>
         </div>
       </section>

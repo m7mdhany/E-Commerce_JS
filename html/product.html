@@ -28,18 +28,20 @@
       <i class="fa-solid fa-up-to-line text-xl ">↑</i>
     </button>
     <!-- nav -->
-    <nav class="h-24 flex items-center bg-white justify-between shadow-lg px-10 sticky top-0 z-50 ">
-      <div class="mian-div flex justify-between w-full">
+    <nav class="h-24 flex items-center bg-white justify-between shadow-lg px-10 sticky top-0 z-50 "
+      style="font-family: Oswald;">
+      <div class="mian-div flex justify-between w-full gap-10">
         <div class="logo-div cursor-pointer relative whitespace-nowrap">
           <a href="../index.html" class="h-full w-full absolute"></a>
           <p class="text-main text-5xl font-bold">E-Market</p>
         </div>
-        <div class="flex gap-10 text-xl items-center grow px-20 justify-end">
+        <div class="flex gap-10 text-xl items-center grow justify-end ">
           <a class="hover:underline" href="../index.html">Home</a>
           <a class="hover:underline" href="products.html">Products</a>
         </div>
-        <div class="div-links flex items-center justify-between gap-10 text-xl">
-          <div class="flex justify-between w-fit gap-7">
+        <!-- icons -->
+        <div class="div-links flex items-center justify-between gap-5 text-xl">
+          <div class="flex justify-between w-fit gap-3 items-center">
             <a href="">
               <!-- <i class="fa-solid fa-magnifying-glass text-main"></i> -->
             </a>
@@ -47,10 +49,14 @@
               <span class="text-main absolute top-0 left-5 rounded-4xl p-1 text-sm bg-black cart-number"></span>
               <i class="fa-solid fa-cart-shopping text-main"></i>
             </a>
-            <a href="login.html">
-              <i class="fa-solid fa-user text-main"></i>
+            <a href="#" class="user bg-main text-white rounded-md px-2 py-1 w-fit hover:bg-secondary">
+              <i class="fa-solid fa-user text-white "></i>
+              <span>Login</span>
             </a>
             <p>Welcome, <span id="navUser" class="text-sec font-bold">Guest</span></p>
+            <a href="login.html" class="text-white! hidden signout">
+              <i class="fa-solid fa-right-from-bracket text-secondary!"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -62,14 +68,18 @@
         <div
           class="h-3/4 w-1/2 absolute translate-x-1/6 bg-white shadow-2xl shadow-2xl/50 flex border-l-8 border-secondary">
           <div class="w-2/4"></div>
-          <div class="product-details w-full h-full flex flex-col gap-5 justify-center text-2xl pr-5">
-            <h2 class="text-3xl">Mango</h2>
-            <p>Price : </p>
+          <div class="product-details w-full h-full flex flex-col gap-5 justify-center text-2xl pr-5 py-10">
+            <h2 class="text-3xl text-center">Mango</h2>
+            <!-- <p>Price : </p>
             <p>Stock : </p>
             <p>Category : </p>
-            <p>SubCategory : </p>
+            <p>SubCategory : </p> -->
+            <div class="product-details-p flex  gap-3 grow items-center">
+              <div class="key text-[1.3rem] font-bold"></div>
+              <div class="value text-[1.3rem]"></div>
+            </div>
             <button
-              class="btn-cart bg-secondary text-white p-2 w-1/2 transition-all 2s hover:scale-120 hover:bg-main cursor-pointer">ADD
+              class="btn-cart bg-secondary text-white p-2 w-1/2 transition-all 2s hover:scale-120 hover:bg-main cursor-pointer m-auto">ADD
               TO
               CART</button>
           </div>

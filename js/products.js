@@ -39,7 +39,6 @@ window.addEventListener("load", function () {
 });
 // add color for selected cat
 let sideCats = document.querySelectorAll(".side-categories button")
-console.log(sideCats);
 let res = Array.from(sideCats).find(item => item.innerText === sessionStorage.getItem("cat"))
 console.log(res);
 if (res) { res.parentElement.classList.add("bg-main", "w-[115%]") } else { sideCats[0].parentElement.classList.add("bg-main", "w-[115%]") }
@@ -66,20 +65,55 @@ async function getData() {
               <div
                 class="card max:h-96 h-96 transition duration-300 ease-in-out flex gap-1 flex-col bg-white shadow-sm rounded-lg overflow-hidden">
                 <div class="flex flex-col grow px-3 pt-3">
-                  <div class="grow max-h-70 h-50 w-full cursor-pointer">
-                    <img class=" object-top object-cover h-full w-full" src= ../${arr[i].image} alt = "" >
+                  <div class="grow max-h-70 h-50 w-full cursor-pointer overflow-hidden">
+                    <img class=" object-top object-cover h-full w-full transform transition duration-1000 hover:scale-150 /hover:object-bottom hover:translate-y-5" src= ../${arr[i].image} alt = "" >
                   </div >
                   <div class="h-1/4 flex flex-col justify-around ">
                   <h2 class="p-name text-center font-bold">${arr[i].name}</h2>
                   <h3 class="price"><span class="font-bold">Price</span> : ${arr[i].price} LE</h3>
                   </div>
                 </div >
-                  <button class="btn-cart p-2 self-center w-full cursor-pointer text-white bg-secondary hover:bg-main">Add to cart</button>
+                  <button class="btn-cart p-2 self-center w-full cursor-pointer text-white bg-secondary hover:bg-main transition-all duration-200">Add to cart</button>
               </div>
             `
     }
 
 
+
+
+
+    // search filter 
+    // this for all keys
+    let searchFilter = document.querySelector(".item-search")
+    searchFilter.addEventListener("input", function () {
+      search = true
+      if (this.value < 1) { search = false }
+      resetSideBar()
+      sessionStorage.removeItem("cat")
+      let value = this.value.toLowerCase().trim();
+      let filterProducts = products.filter((obj) => {
+        return Object.values(obj).some((val) => {
+          return String(val).toLowerCase().includes(value)
+        })
+      })
+      // .map(obj => obj.name) 
+      filterRule = "search"
+      startFilter("cat", filterProducts)
+    })
+
+
+    //  sorting
+    let sorter = document.querySelector(".sorter")
+    sorter.addEventListener("change", function () {
+      let items = []
+      if (search == true) { items = filter } else { items = products }
+      filterRule = "sort"
+
+      startFilter("cat", sorter.value)
+    })
+
+
+    // filtering
     startFilter = function (val, key) {
       if (val != "") {
         val = sessionStorage.getItem("cat")
@@ -108,141 +142,50 @@ async function getData() {
         filter = key
       }
 
-
-      // if (filterRule == "cat") {
-      //   searchFilter.value = ""
-      //   if (val != "") {
-      //     val = sessionStorage.getItem("cat")
-      //   }
-      //   filter = products.filter(obj =>
-      //     Object.values(obj).includes(val))
-      //   console.log(filter);
-      // } else
-      // if (filterRule == "sort") {
-      //   if (sessionStorage.getItem("cat")) {
-      //     val = sessionStorage.getItem("cat")
-      //     filter = products.filter(obj =>
-      //       Object.values(obj).includes(val))
-      //   } else if (search == true) {
-      //     filter = val
-      //   }
-      //   else {
-      //     val = ""
-      //     filter = products.filter(obj =>
-      //       Object.values(obj).includes(val))
-      //   }
-
-      // } else if (filterRule == "search") {
-      //   filter = val
-      // }
-
-      // if (sessionStorage.getItem("cat")) {
-      //   val = sessionStorage.getItem("cat")
-      // }
-      // if (typeof val != "object") {
-      //   if (!sessionStorage.getItem("cat")) { val = "" }
-      //   if (val !== "sort") {
-      //     filter = products.filter(obj =>
-      //       Object.values(obj).includes(val))
-      //     console.log("not sort");
-      //   } else {
-      //     console.log("sort");
-      //   }
-      // } else if (typeof val == "object") {
-      //   filter = val
-      // }
-
+      // add products of filter
       cardContainer.innerHTML = ``
-      // if (val) {
-      //   for (let i = 0; i < filter.length; i++) {
-      //     cardContainer.innerHTML += allProducts(filter, i)
-      //   }
-      // } else {
-      //   for (let i = 0; i < products.length; i++) {
-      //     cardContainer.innerHTML += allProducts(products, i)
-      //   }
-      // }
+      document.querySelector(".results").innerHTML = `Total : <span class="text-sec font-bold" > ${filter.length} Results</span>`
       for (let i = 0; i < filter.length; i++) {
         cardContainer.innerHTML += allProducts(filter, i)
       }
+
+      let height = cardContainer.offsetHeight;
+      let newH
+      if (height > 800) {
+        cardContainer.style.maxHeight = `${415 * 2}px`
+      }
+      document.querySelector(".more-cards").addEventListener("click", function () {
+        newH = cardContainer.offsetHeight;
+        console.log(cardContainer.offsetHeight);
+        cardContainer.style.maxHeight = `${cardContainer.offsetHeight + (403 * 3)}px`
+        setTimeout(() => {
+          console.log(cardContainer.offsetHeight);
+          if (newH == cardContainer.offsetHeight) {
+            document.querySelector(".more-cards").style.display = "none"
+          }
+        }, 500)
+      })
+
+
+
       addToCart()
+      // product card page
+      let allCards = document.querySelectorAll(".card img")
+      let oneCard = document.querySelectorAll(".card .p-name")
+      allCards.forEach((item, i) => item.addEventListener("click", function () {
+        let card = oneCard[i].innerHTML
+        sessionStorage.setItem("product", card)
+        location.assign("product.html")
+      }))
+
     }
+
     startFilter("cat")
 
 
 
-    // search filter
-    // this for name
-    // let searchFilter = document.querySelector(".item-search")
-    // searchFilter.addEventListener("input", function () {
-    //   // if (this.value < 1) { startFilter(products) } else { }
-    //   let value = this.value.toLowerCase().trim();
-
-    //   let filterProducts = products.filter(obj =>
-    //     obj.toLowerCase().includes(value)
-    //   );
-
-    //   filterRule = "search";
-    //   startFilter(filterProducts);
-    // })
-
-    // search filter 
-    // this for all keys
-    let searchFilter = document.querySelector(".item-search")
-    searchFilter.addEventListener("input", function () {
-      search = true
-      if (this.value < 1) { search = false }
-      resetSideBar()
-      sessionStorage.removeItem("cat")
-      let value = this.value.toLowerCase().trim();
-      let filterProducts = products.filter((obj) => {
-        return Object.values(obj).some((val) => {
-          return String(val).toLowerCase().includes(value)
-        })
-      })
-      // .map(obj => obj.name) 
-      filterRule = "search"
-      startFilter("cat", filterProducts)
-    })
-
-
-
-
-
-    //  sorting
-    let sorter = document.querySelector(".sorter")
-    sorter.addEventListener("change", function () {
-      let items = []
-      if (search == true) { items = filter } else { items = products }
-      filterRule = "sort"
-      // if (sorter.value === "1") {
-      //   items.sort((a, b) => a.price - b.price);
-      //   startFilter(items)
-      // } else if (sorter.value === "2") {
-      //   items.sort((a, b) => b.price - a.price);
-      //   startFilter(items)
-      // } else if (sorter.value === "3") {
-      //   filter.sort((a, b) => a.name.localeCompare(b.name));
-      //   startFilter(items)
-      // } else if (sorter.value === "4") {
-      //   items.sort((a, b) => b.name.localeCompare(a.name));
-      //   startFilter(items)
-      // }
-      startFilter("cat", sorter.value)
-    })
-    // product card page
-    let allCards = document.querySelectorAll(".card img")
-    let oneCard = document.querySelectorAll(".card .p-name")
-    allCards.forEach((item, i) => item.addEventListener("click", function () {
-      let card = oneCard[i].innerHTML
-      sessionStorage.setItem("product", card)
-      location.assign("product.html")
-    }))
-
     // add to cart page
     function addToCart() {
-      // let notifCont = document.createElement("div")
-      // notifCont.className = "fixed border w-fit top-50 text-5xl transition -right-30 z-50 relative w-96 h-96 bg-main"
       let test = document.querySelector(".notif-cont")
       let prodsBody = document.querySelector(".prds-body")
       // prodsBody.prepend(notifCont)
@@ -251,7 +194,6 @@ async function getData() {
         let cart = this.parentElement.querySelector(".p-name").innerText
         let cartNumber = document.querySelector(".cart-number")
         let cartN = sessionStorage.getItem("CartN")
-
 
         let notif = document.createElement("div")
         notif.className = "order-msg w-50 h-20 rounded-l-2xl relative top-0 -right-500 bg-main/70 text-white transform transition-all duration-300 z-50 flex justify-center items-center shadow-xl"

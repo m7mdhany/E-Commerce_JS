@@ -36,7 +36,7 @@
 
 .card:hover {
   perspective: 100px;
-  animation: wiggle 5s infinite;
+  /* animation: wiggle 5s infinite; */
 }
 
 
