@@ -1,14 +1,28 @@
 let navUser = document.getElementById("navUser")
 if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
   document.querySelector(".signout").classList.remove("hidden")
-  if (localStorage.getItem("online")) {
-    navUser.innerText = localStorage.getItem("online")
-  } else {
-    navUser.innerText = sessionStorage.getItem("online")
-  }
+  navUser.innerText = sessionStorage.getItem("online")
+  document.querySelector(".user span").style.display = "none"
+  // login / profile
+  let loginBtn = document.querySelector(".user")
+  loginBtn.addEventListener("click", () => {
+    location.assign("#")
+  })
 } else {
   navUser.innerText = "Guest"
+  document.querySelector(".user span").style.display = "inline"
+  let loginBtn = document.querySelector(".user")
+  loginBtn.addEventListener("click", () => {
+    location.assign("/html/login.html")
+  })
 }
+// signout
+document.querySelector(".signout").addEventListener("click", () => {
+  sessionStorage.removeItem("online")
+  localStorage.removeItem("online")
+  location.assign("../html/login.html")
+})
+
 if (!sessionStorage.getItem("trueCart")) {
   sessionStorage.setItem("CartN", 0)
 }
@@ -70,8 +84,8 @@ async function getData(val1 = undefined, val2 = undefined) {
               <img class="object-cover h-full m-auto" src="../${filter[i].image}" alt="">
             </div>
             <div class="w-full flex flex-col items-center bg-white shadow-lg">
-              <h3 class="text-center font-bold rounded-2xl text-xl h-13 flex items-center p-2">${filter[i].name}</h3>
-              <span class="w-fit text-center bg-main text-xl p-1 text-secondary font-bold absolute right-0 top-60">
+              <h3 class="text-center font-bold rounded-2xl text- h-13 flex items-center p-2">${filter[i].name}</h3>
+              <span class="w-fit text-center bg-main text-xl p-1 text-white font-bold absolute right-0 top-60">
               ${filter[i].price} LE</span>
               <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">
                 Add to cart</button>
@@ -171,10 +185,6 @@ async function getData(val1 = undefined, val2 = undefined) {
     }))
 
 
-
-
-
-
     // add to cart page
 
     let btnCart = document.querySelectorAll(".btn-cart")
@@ -225,5 +235,5 @@ async function getData(val1 = undefined, val2 = undefined) {
   }
 
 };
-
-getData(["Apple 17 pro MAX", "PlayStation 5 Pro", "Sharp Front Load Washing Machine", "Sonai Blender"], ["Milk Shake Strawberry", "Lemon", "Tornado TST-700 Toaster maker", "Tornado TCME-100D-PRO Coffe machine"])
+// arrivals - offers
+getData(["Apple 17 pro MAX", "PlayStation 5 Pro", "Nintendo Switch 2", "Sonai Blender"], ["Milk Shake Strawberry", "Lemon", "Tornado TST-700 Toaster maker", "Tornado TCME-100D-PRO Coffe machine"])

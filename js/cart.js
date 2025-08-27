@@ -1,13 +1,22 @@
 let navUser = document.getElementById("navUser")
 if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
   document.querySelector(".signout").classList.remove("hidden")
-  if (localStorage.getItem("online")) {
-    navUser.innerText = localStorage.getItem("online")
-  } else {
-    navUser.innerText = sessionStorage.getItem("online")
-  }
+  navUser.innerText = sessionStorage.getItem("online")
+  document.querySelector(".user span").style.display = "none"
+  // login / profile
+  let loginBtn = document.querySelector(".user")
+  loginBtn.addEventListener("click", () => {
+    location.assign("#")
+  })
+  document.querySelector(".login-warning").style.display = "none"
 } else {
   navUser.innerText = "Guest"
+  document.querySelector(".user span").style.display = "inline"
+  let loginBtn = document.querySelector(".user")
+  loginBtn.addEventListener("click", () => {
+    location.assign("login.html")
+  })
+  document.querySelector(".login-warning").style.display = "block"
 }
 
 let cartNumber = document.querySelector(".cart-number")
@@ -15,9 +24,14 @@ if (sessionStorage.getItem("CartN") > 0) {
   cartNumber.innerText = sessionStorage.getItem("CartN")
 }
 
+// signout
+document.querySelector(".signout").addEventListener("click", () => {
+  sessionStorage.removeItem("online")
+  localStorage.removeItem("online")
+  location.assign("../html/login.html")
+})
+
 let cartContainer = document.querySelector(".cart-container")
-
-
 async function getData(val = undefined, key) {
   try {
     const response = await fetch("../data.json");
@@ -210,3 +224,9 @@ function remove() {
       </div>
       `
 }
+
+// scroll
+let goUp = document.querySelector(".goUp")
+goUp.addEventListener("click", function () {
+  document.getElementById("body").scrollIntoView({ behavior: "smooth" });
+});

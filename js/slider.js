@@ -170,6 +170,27 @@ function updateIndicators() {
   })
 }
 
+let slidBtn = document.querySelectorAll(".go-slide")
+
+for (let i = 0; i < slidBtn.length; i++) {
+  slidBtn[i].addEventListener("click", () => {
+    clearAllTimeouts()
+    clearInterval(sliderTimer)
+    sliderTimer = setInterval(() => { sliderTime() }, sliderHold)
+
+    if (i === 0) {
+      if (currentIndex > 0) {
+        currentIndex--
+        moveToIndex(currentIndex)
+      }
+    } else {
+      if (currentIndex < slideCount + 1) {
+        currentIndex++
+        moveToIndex(currentIndex)
+      }
+    }
+  })
+}
 
 // // var btns = document.querySelectorAll(".comments button")
 // // var pBtn = btns[0]

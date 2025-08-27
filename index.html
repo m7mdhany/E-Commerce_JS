@@ -26,35 +26,37 @@
     <div class="notif-cont fixed w top-50 text-2xl flex flex-col gap-2 right-0 z-50 w-fit h-fit ">
     </div>
     <button
-      class="goUp z-50 bg-secondary hover:bg-main cursor-pointer text-white h-10 w-5 rounded-4xl p-10 fixed bottom-10 right-10 flex justify-center items-center">
+      class="goUp z-50 border bg-secondary hover:bg-main cursor-pointer text-white h-10 w-5 rounded-4xl p-10 fixed bottom-10 right-10 flex justify-center items-center">
       <i class="fa-solid fa-up-to-line text-xl ">↑</i>
     </button>
-    <nav class="h-24 flex items-center bg-white justify-between shadow-lg px-10 sticky top-0 z-50 ">
-      <div class="mian-div flex justify-between w-full">
+    <nav class="h-24 flex items-center bg-white justify-between shadow-lg px-10 sticky top-0 z-50 "
+      style="font-family: Oswald;">
+      <div class="mian-div flex justify-between w-full gap-10">
         <div class="logo-div cursor-pointer relative whitespace-nowrap">
-          <a href="index.html" class="h-full w-full absolute"></a>
+          <a href="../index.html" class="h-full w-full absolute"></a>
           <p class="text-main text-5xl font-bold">E-Market</p>
         </div>
         <div class="flex gap-10 text-xl items-center grow justify-end ">
-          <a class="hover:underline" href="index.html">Home</a>
-          <a class="hover:underline" href="/html/products.html">Products</a>
+          <a class="hover:underline" href="../index.html">Home</a>
+          <a class="hover:underline" href="./html/products.html">Products</a>
         </div>
         <!-- icons -->
         <div class="div-links flex items-center justify-between gap-2 text-xl">
-          <div class="flex justify-between w-fit gap-7">
+          <div class="flex justify-between w-fit gap-3 items-center">
             <a href="">
-              <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+              <!-- <i class="fa-solid fa-magnifying-glass text-main"></i> -->
             </a>
-            <a href="/html/cart-page.html" class="relative">
+            <a href="./html/cart-page.html" class="relative">
               <span class="text-main absolute top-0 left-5 rounded-4xl p-1 text-sm bg-black cart-number"></span>
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-solid fa-cart-shopping text-main"></i>
             </a>
-            <a href="/html/login.html">
-              <i class="fa-solid fa-user"></i>
+            <a href="#" class="user bg-main text-white rounded-md px-2 py-1 w-fit hover:bg-secondary">
+              <i class="fa-solid fa-user text-white! "></i>
+              <span>Login</span>
             </a>
             <p>Welcome, <span id="navUser" class="text-sec font-bold">Guest</span></p>
-            <a href="login.html" class="text-main hidden signout">
-              <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="/html/login.html" class="text-white! hidden signout ">
+              <i class="fa-solid fa-right-from-bracket text-secondary!"></i>
             </a>
           </div>
         </div>
@@ -241,9 +243,11 @@
               <!-- ------------ -->
             </div>
           </div>
-          <div class="indicators h-fit w-fit flex justify-between gap-5 mt-5">
-            <!-- <div class="w-5 h-5 bg-main"></div>
-            <div class="w-5 h-5 bg-gray-400"></div> -->
+          <div class="indicators-con flex justify-between gap-5 mt-5">
+            <div class="go-slide w-5 h-5 bg-secondary cursor-pointer text-white"></div>
+            <div class="indicators h-fit w-fit flex justify-between gap-5 ">
+            </div>
+            <div class="go-slide w-5 h-5 bg-secondary cursor-pointer text-white"></div>
           </div>
         </div>
       </section>

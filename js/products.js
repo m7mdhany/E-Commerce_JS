@@ -1,14 +1,27 @@
 let navUser = document.getElementById("navUser")
 if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
   document.querySelector(".signout").classList.remove("hidden")
-  if (localStorage.getItem("online")) {
-    navUser.innerText = localStorage.getItem("online")
-  } else {
-    navUser.innerText = sessionStorage.getItem("online")
-  }
+  navUser.innerText = sessionStorage.getItem("online")
+  document.querySelector(".user span").style.display = "none"
+  // login / profile
+  let loginBtn = document.querySelector(".user")
+  loginBtn.addEventListener("click", () => {
+    location.assign("#")
+  })
 } else {
   navUser.innerText = "Guest"
+  document.querySelector(".user span").style.display = "inline"
+  let loginBtn = document.querySelector(".user")
+  loginBtn.addEventListener("click", () => {
+    location.assign("login.html")
+  })
 }
+// signout
+document.querySelector(".signout").addEventListener("click", () => {
+  sessionStorage.removeItem("online")
+  localStorage.removeItem("online")
+  location.assign("../html/login.html")
+})
 
 let cardContainer = document.getElementById("cardContainer")
 let card = document.getElementById("card")
