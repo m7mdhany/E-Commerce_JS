@@ -32,7 +32,7 @@ if (sessionStorage.getItem("CartN") > 0) {
 }
 let allCart = []
 if (sessionStorage.getItem("cat")) {
-  allCart = [...sessionStorage.getItem("cat").split(",")]
+  allCart = [...sessionStorage.getItem("cart").split(",")]
 }
 window.addEventListener("load", function () {
   // sessionStorage.setItem("cat", "");
@@ -40,7 +40,6 @@ window.addEventListener("load", function () {
 // add color for selected cat
 let sideCats = document.querySelectorAll(".side-categories button")
 let res = Array.from(sideCats).find(item => item.innerText === sessionStorage.getItem("cat"))
-console.log(res);
 if (res) { res.parentElement.classList.add("bg-main", "w-[115%]") } else { sideCats[0].parentElement.classList.add("bg-main", "w-[115%]") }
 
 
@@ -153,6 +152,7 @@ async function getData() {
       for (let i = 0; i < filter.length; i++) {
         cardContainer.innerHTML += allProducts(filter, i)
       }
+      addToCart()
 
       // show more products button
       let height = cardContainer.offsetHeight;
@@ -164,12 +164,9 @@ async function getData() {
       }
       document.querySelector(".more-cards").addEventListener("click", function () {
         newH = cardContainer.offsetHeight;
-        console.log(cardContainer.offsetHeight);
         cardContainer.style.maxHeight = `${cardContainer.offsetHeight + (403 * 3)}px`
         // disable button
         cardContainer.addEventListener("transitionend", () => {
-          console.log("Transition finished!");
-          console.log(cardContainer.offsetHeight);
           if (newH == cardContainer.offsetHeight) {
             document.querySelector(".more-cards").style.display = "none"
           }
@@ -177,7 +174,6 @@ async function getData() {
       })
 
 
-      addToCart()
       // product card page
       let allCards = document.querySelectorAll(".card img")
       let oneCard = document.querySelectorAll(".card .p-name")

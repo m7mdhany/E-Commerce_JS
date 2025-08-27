@@ -42,16 +42,16 @@ let sectionIndex = 1
 
 let timeOuts = []
 
-function startSlide(x) {
+function startSlide(cIndex) {
   let t01 = setTimeout(() => {
-    sliderSlice[x].querySelectorAll(".sliderSection").forEach((element, i) => {
+    sliderSlice[cIndex].querySelectorAll(".sliderSection").forEach((element, i) => {
       let t02 = setTimeout(
         function () {
           element.style.transition = slidesTransition;
           element.style.transform = "translateX(0)";
-          if (i == sliderSlice[x].querySelectorAll(".sliderSection").length - 1) {
+          if (i == sliderSlice[cIndex].querySelectorAll(".sliderSection").length - 1) {
             let t03 = setTimeout(() => {
-              next(x);
+              next(cIndex);
             }, slidesHold);
             timeOuts.push(t03);
           }
@@ -61,15 +61,15 @@ function startSlide(x) {
   }, slidesDelay);
   timeOuts.push(t01);
 
-  function next(x) {
-    sliderSlice[x].querySelectorAll(".sliderSection").forEach((element, i) => {
+  function next(cIndex) {
+    sliderSlice[cIndex].querySelectorAll(".sliderSection").forEach((element, i) => {
       let t04 = setTimeout(
         function () {
           element.style.transition = slidesLeaveTransition
           element.style.transform = "translateX(-2000px)";
-          if (i == sliderSlice[x].querySelectorAll(".sliderSection").length - 1) {
+          if (i == sliderSlice[cIndex].querySelectorAll(".sliderSection").length - 1) {
             let t05 = setTimeout(() => {
-              resetSlider(x)
+              resetSlider(cIndex)
             }, slidesReset)
             timeOuts.push(t05)
           }
@@ -79,8 +79,8 @@ function startSlide(x) {
   }
 }
 
-function resetSlider(x) {
-  sliderSlice[x].querySelectorAll(".sliderSection").forEach((element, i) => {
+function resetSlider(cIndex) {
+  sliderSlice[cIndex].querySelectorAll(".sliderSection").forEach((element, i) => {
     element.style.transition = "none"
     element.style.transform = "translateX(1500px)";
   })
@@ -166,13 +166,33 @@ function updateIndicators() {
 }
 // slider navigation
 let slidBtn = document.querySelectorAll(".go-slide")
+let slidBtn2 = document.querySelectorAll(".go-slider")
 
 for (let i = 0; i < slidBtn.length; i++) {
   slidBtn[i].addEventListener("click", () => {
     clearAllTimeouts()
     clearInterval(sliderTimer)
     sliderTimer = setInterval(() => { sliderTime() }, sliderHold)
-
+    resetSlider(currentIndex)
+    if (i === 0) {
+      if (currentIndex > 0) {
+        currentIndex--
+        moveToIndex(currentIndex)
+      }
+    } else {
+      if (currentIndex < slideCount + 1) {
+        currentIndex++
+        moveToIndex(currentIndex)
+      }
+    }
+  })
+}
+for (let i = 0; i < slidBtn2.length; i++) {
+  slidBtn2[i].addEventListener("click", () => {
+    clearAllTimeouts()
+    clearInterval(sliderTimer)
+    sliderTimer = setInterval(() => { sliderTime() }, sliderHold)
+    resetSlider(currentIndex)
     if (i === 0) {
       if (currentIndex > 0) {
         currentIndex--

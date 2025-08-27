@@ -92,8 +92,9 @@ nav {
 .sliderSection {
   transform: translateX(1500px);
   border-radius: 10px;
-  border: 1px black solid;
+  border: 1px var(--color-secondary) solid;
   padding: 5px;
+  background-color: white;
 
   img {
     border-radius: 10px;
