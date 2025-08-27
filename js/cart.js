@@ -53,6 +53,7 @@ async function getData(val = undefined, key) {
       `
     } else {
       cartContainer.innerHTML = ``
+
     }
     // order summary - items count
     let total = 0
@@ -79,6 +80,8 @@ async function getData(val = undefined, key) {
                 </div>
               </div>
       `
+      document.querySelector(".cart-clear").classList.remove("hidden")
+      document.querySelector(".cart-clear").classList.add("flex")
       // order summary
       total = total + product[i].price
       let priceSumTotal = document.querySelector(".total-sum-price")

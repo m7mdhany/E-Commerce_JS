@@ -53,6 +53,11 @@ async function getData() {
     const response = await fetch("../data.json");
     const data = await response.json();
     products = data.products
+    // randomize array
+    for (let i = products.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [products[i], products[j]] = [products[j], products[i]]; // Swap
+    }
     filter = products
 
 

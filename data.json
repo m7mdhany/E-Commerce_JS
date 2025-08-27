@@ -1,6 +1,69 @@
 {
   "products": [
     {
+      "name": "PlayStation 5 Pro",
+      "price": 45900,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/playstation5.webp"
+    },
+    {
+      "name": "PlayStation 4 fat 500 GB",
+      "price": 14499,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/playstation4.webp"
+    },
+    {
+      "name": "Nintendo Switch 2",
+      "price": 32499,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/nitndo.webp"
+    },
+    {
+      "name": "Xbox Series X",
+      "price": 24999,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/xbox.webp"
+    },
+    {
+      "name": "Monopoly",
+      "price": 300,
+      "stock": 200,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Board Games",
+      "image": "Assets/products/games/boardgames/monoply.webp"
+    },
+    {
+      "name": "Catan",
+      "price": 300,
+      "stock": 20,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Board Games",
+      "image": "Assets/products/games/boardgames/catan.webp"
+    },
+    {
+      "name": "Chess",
+      "price": 150,
+      "stock": 30,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Board Games",
+      "image": "Assets/products/games/boardgames/chess.jpg"
+    },
+    {
       "name": "Apple 17 pro MAX",
       "price": 75000,
       "Brand": "APPLE",
@@ -335,69 +398,6 @@
       "category": "Drinks",
       "subcategory": "Hot",
       "image": "Assets/products/drink/hot/sahlab.jpg"
-    },
-    {
-      "name": "PlayStation 5 Pro",
-      "price": 45900,
-      "stock": 10,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Consoles",
-      "image": "Assets/products/games/consoles/playstation5.webp"
-    },
-    {
-      "name": "PlayStation 4 fat 500 GB",
-      "price": 14499,
-      "stock": 10,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Consoles",
-      "image": "Assets/products/games/consoles/playstation4.webp"
-    },
-    {
-      "name": "Nintendo Switch 2",
-      "price": 32499,
-      "stock": 10,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Consoles",
-      "image": "Assets/products/games/consoles/nitndo.webp"
-    },
-    {
-      "name": "Xbox Series X",
-      "price": 24999,
-      "stock": 10,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Consoles",
-      "image": "Assets/products/games/consoles/xbox.webp"
-    },
-    {
-      "name": "Monopoly",
-      "price": 300,
-      "stock": 200,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Board Games",
-      "image": "Assets/products/games/boardgames/monoply.webp"
-    },
-    {
-      "name": "Catan",
-      "price": 300,
-      "stock": 20,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Board Games",
-      "image": "Assets/products/games/boardgames/catan.webp"
-    },
-    {
-      "name": "Chess",
-      "price": 150,
-      "stock": 30,
-      "discount": 0,
-      "category": "Games",
-      "subcategory": "Board Games",
-      "image": "Assets/products/games/boardgames/chess.jpg"
     },
     {
       "name": "Fresh Refrigerator",
