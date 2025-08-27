@@ -41,9 +41,17 @@ if (sessionStorage.getItem("cart")) {
 
 async function getData(val = undefined, key) {
   try {
-    const response = await fetch("../data.json");
-    const data = await response.json();
-    products = data.products
+    // fetch/get api items
+    let products = []
+    if (!localStorage.getItem("products")) {
+      const response = await fetch("../data.json");
+      const data = await response.json();
+      products = data.products
+      localStorage.setItem("products", JSON.stringify(products));
+    } else {
+      products = JSON.parse(localStorage.getItem("products"))
+    }
+
     let filter = products.filter(obj =>
       Object.values(obj).includes(val)
     );

@@ -25,7 +25,6 @@ document.querySelector(".signout").addEventListener("click", () => {
 
 let cardContainer = document.getElementById("cardContainer")
 let card = document.getElementById("card")
-let products
 let cartNumber = document.querySelector(".cart-number")
 if (sessionStorage.getItem("CartN") > 0) {
   cartNumber.innerText = sessionStorage.getItem("CartN")
@@ -49,9 +48,17 @@ let search = false
 let filterRule = ""
 async function getData() {
   try {
-    const response = await fetch("../data.json");
-    const data = await response.json();
-    products = data.products
+    // fetch/get api items
+    let products = []
+    if (!localStorage.getItem("products")) {
+      const response = await fetch("../data.json");
+      const data = await response.json();
+      products = data.products
+      localStorage.setItem("products", JSON.stringify(products));
+    } else {
+      products = JSON.parse(localStorage.getItem("products"))
+    }
+
     // randomize array
     for (let i = products.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -82,10 +89,6 @@ async function getData() {
             `
     }
 
-
-
-
-
     // search filter 
     // this for all keys
     let searchFilter = document.querySelector(".item-search")
@@ -104,7 +107,6 @@ async function getData() {
       filterRule = "search"
       startFilter("cat", filterProducts)
     })
-
 
     //  sorting
     let sorter = document.querySelector(".sorter")
@@ -155,24 +157,24 @@ async function getData() {
       addToCart()
 
       // show more products button
-      let height = cardContainer.offsetHeight;
-      let newH
-      if (height > 800) {
-        cardContainer.style.maxHeight = `${415 * 2}px`
-        document.querySelector(".more-cards").style.display = "block"
-
+      if (filterRule != "sort") {
+        let height = cardContainer.offsetHeight;
+        let newH
+        if (height > 800) {
+          cardContainer.style.maxHeight = `${415 * 2}px`
+          document.querySelector(".more-cards").style.display = "block"
+        }
+        document.querySelector(".more-cards").addEventListener("click", function () {
+          newH = cardContainer.offsetHeight;
+          cardContainer.style.maxHeight = `${cardContainer.offsetHeight + (403 * 3)}px`
+          // disable button
+          cardContainer.addEventListener("transitionend", () => {
+            if (newH == cardContainer.offsetHeight) {
+              document.querySelector(".more-cards").style.display = "none"
+            }
+          });
+        })
       }
-      document.querySelector(".more-cards").addEventListener("click", function () {
-        newH = cardContainer.offsetHeight;
-        cardContainer.style.maxHeight = `${cardContainer.offsetHeight + (403 * 3)}px`
-        // disable button
-        cardContainer.addEventListener("transitionend", () => {
-          if (newH == cardContainer.offsetHeight) {
-            document.querySelector(".more-cards").style.display = "none"
-          }
-        });
-      })
-
 
       // product card page
       let allCards = document.querySelectorAll(".card img")
@@ -182,7 +184,6 @@ async function getData() {
         sessionStorage.setItem("product", card)
         location.assign("product.html")
       }))
-
     }
     startFilter("cat")
 

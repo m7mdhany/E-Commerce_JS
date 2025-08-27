@@ -26,16 +26,12 @@ sliderContainer.prepend(lastClone)
 
 sliderContainer.style.transform = `translateX(-${slideWidth * currentIndex}%)`
 
-
-
-
 function moveToIndex(index) {
   sliderContainer.style.transition = sliderTransition
   sliderContainer.style.transform = `translateX(-${slideWidth * index}%)`
   startSlide(currentIndex)
   updateIndicators()
 }
-
 
 let sliderSlice = document.querySelectorAll(".slider")
 let sectionIndex = 1
@@ -173,14 +169,15 @@ for (let i = 0; i < slidBtn.length; i++) {
     clearAllTimeouts()
     clearInterval(sliderTimer)
     sliderTimer = setInterval(() => { sliderTime() }, sliderHold)
-    resetSlider(currentIndex)
     if (i === 0) {
       if (currentIndex > 0) {
+        resetSlider(currentIndex)
         currentIndex--
         moveToIndex(currentIndex)
       }
     } else {
       if (currentIndex < slideCount + 1) {
+        resetSlider(currentIndex)
         currentIndex++
         moveToIndex(currentIndex)
       }

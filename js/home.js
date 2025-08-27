@@ -60,9 +60,16 @@ let offerContainer = document.querySelector(".offer-container")
 // main f
 async function getData(val1 = undefined, val2 = undefined) {
   try {
-    const response = await fetch("data.json");
-    const data = await response.json();
-    products = data.products
+    // fetch/get api items
+    let products = []
+    if (!localStorage.getItem("products")) {
+      const response = await fetch("../data.json");
+      const data = await response.json();
+      products = data.products
+      localStorage.setItem("products", JSON.stringify(products));
+    } else {
+      products = JSON.parse(localStorage.getItem("products"))
+    }
 
     // new arrivals
     arrivalsContainer.innerHTML = ``
