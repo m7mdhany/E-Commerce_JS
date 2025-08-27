@@ -87,7 +87,7 @@ async function getData(val1 = undefined, val2 = undefined) {
               <h3 class="text-center font-bold rounded-2xl text- h-13 flex items-center p-2">${filter[i].name}</h3>
               <span class="w-fit text-center bg-main text-xl p-1 text-white font-bold absolute right-0 top-60">
               ${filter[i].price} LE</span>
-              <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">
+              <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white transition-color duration-200">
                 Add to cart</button>
             </div>
             <div class="h-20 w-full absolute overflow-hidden ">
@@ -127,7 +127,7 @@ async function getData(val1 = undefined, val2 = undefined) {
                 <span class="w-fit text-center bg-main p-1 text-white font-bold whitespace-nowrap">
                 ${filter[i].price - (filter[i].price * filter[i].discount)}  LE</span>
               </div>
-              <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white">
+              <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white transition-color duration-200">
                 Add to cart</button>
             </div>
             <div class="h-20 w-full absolute overflow-hidden ">
