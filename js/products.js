@@ -149,23 +149,27 @@ async function getData() {
         cardContainer.innerHTML += allProducts(filter, i)
       }
 
+      // show more products button
       let height = cardContainer.offsetHeight;
       let newH
       if (height > 800) {
         cardContainer.style.maxHeight = `${415 * 2}px`
+        document.querySelector(".more-cards").style.display = "block"
+
       }
       document.querySelector(".more-cards").addEventListener("click", function () {
         newH = cardContainer.offsetHeight;
         console.log(cardContainer.offsetHeight);
         cardContainer.style.maxHeight = `${cardContainer.offsetHeight + (403 * 3)}px`
-        setTimeout(() => {
+        // disable button
+        cardContainer.addEventListener("transitionend", () => {
+          console.log("Transition finished!");
           console.log(cardContainer.offsetHeight);
           if (newH == cardContainer.offsetHeight) {
             document.querySelector(".more-cards").style.display = "none"
           }
-        }, 500)
+        });
       })
-
 
 
       addToCart()
@@ -179,10 +183,7 @@ async function getData() {
       }))
 
     }
-
     startFilter("cat")
-
-
 
     // add to cart page
     function addToCart() {
