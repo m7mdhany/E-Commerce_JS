@@ -355,13 +355,22 @@
       "image": "Assets/products/games/consoles/playstation4.webp"
     },
     {
-      "name": "PlayStation 4 fat 500 GB",
-      "price": 14499,
+      "name": "Nintendo Switch 2",
+      "price": 32499,
       "stock": 10,
       "discount": 0,
       "category": "Games",
       "subcategory": "Consoles",
-      "image": "Assets/products/games/consoles/playstation4.webp"
+      "image": "Assets/products/games/consoles/nitndo.webp"
+    },
+    {
+      "name": "Xbox Series X",
+      "price": 24999,
+      "stock": 10,
+      "discount": 0,
+      "category": "Games",
+      "subcategory": "Consoles",
+      "image": "Assets/products/games/consoles/xbox.webp"
     },
     {
       "name": "Monopoly",
@@ -370,7 +379,7 @@
       "discount": 0,
       "category": "Games",
       "subcategory": "Board Games",
-      "image": "Assets/products"
+      "image": "Assets/products/games/boardgames/monoply.webp"
     },
     {
       "name": "Catan",
@@ -379,7 +388,7 @@
       "discount": 0,
       "category": "Games",
       "subcategory": "Board Games",
-      "image": "Assets/products"
+      "image": "Assets/products/games/boardgames/catan.webp"
     },
     {
       "name": "Chess",
@@ -388,7 +397,7 @@
       "discount": 0,
       "category": "Games",
       "subcategory": "Board Games",
-      "image": "Assets/products"
+      "image": "Assets/products/games/boardgames/chess.jpg"
     },
     {
       "name": "Fresh Refrigerator",
@@ -426,7 +435,7 @@
       "Size": "75 Inch",
       "category": "Home Appliances",
       "subcategory": "Large",
-      "image": "Assets/products"
+      "image": "Assets/products/home/tv/lg-tv.jpg"
     },
     {
       "name": "Samsung TV",
@@ -438,7 +447,7 @@
       "Size": "55 Inch",
       "category": "Home Appliances",
       "subcategory": "Large",
-      "image": "Assets/products"
+      "image": "Assets/products/home/tv/tb-sam.png"
     },
     {
       "name": "Sharp TV",
@@ -450,7 +459,7 @@
       "Size": "75 Inch",
       "category": "Home Appliances",
       "subcategory": "Large",
-      "image": "Assets/products/home/"
+      "image": "Assets/products/home/tv/tv-sharp.jpg"
     },
     {
       "name": "Fresh Gas cooker",

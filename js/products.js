@@ -1,3 +1,15 @@
+let navUser = document.getElementById("navUser")
+if (localStorage.getItem("online") || sessionStorage.getItem("online")) {
+  document.querySelector(".signout").classList.remove("hidden")
+  if (localStorage.getItem("online")) {
+    navUser.innerText = localStorage.getItem("online")
+  } else {
+    navUser.innerText = sessionStorage.getItem("online")
+  }
+} else {
+  navUser.innerText = "Guest"
+}
+
 let cardContainer = document.getElementById("cardContainer")
 let card = document.getElementById("card")
 let products
