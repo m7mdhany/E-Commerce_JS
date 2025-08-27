@@ -47,8 +47,8 @@ catLinks.forEach((item, i) => item.addEventListener("click", () => {
 }))
 
 let allCart = []
-if (sessionStorage.getItem("cat")) {
-  allCart = [...sessionStorage.getItem("cat").split(",")]
+if (sessionStorage.getItem("cart")) {
+  allCart = [...sessionStorage.getItem("cart").split(",")]
 }
 
 // new arrivals cards
@@ -228,8 +228,8 @@ async function getData(val1 = undefined, val2 = undefined) {
       if (!allCart.includes(cart)) {
         cartN++
         allCart.push(cart)
-        console.log(allCart);
       }
+
       sessionStorage.setItem("cart", allCart)
       sessionStorage.setItem("CartN", cartN)
       cartNumber.innerText = sessionStorage.getItem("CartN")
