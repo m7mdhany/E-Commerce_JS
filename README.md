@@ -1,4 +1,5 @@
-# 🛒 E-Commerce Project
+# 🛒 E-Commerce ٍStore
+# E-MARKET
 ## HTML 5, CSS 3,Tailwind css
 
 
@@ -11,7 +12,7 @@
 
 ## 📌 Overview
 A fully functional **E-Commerce website** built with **HTML5, CSS3, Tailwind CSS, and Vanilla JavaScript**.  
-This project includes product listing, product details, shopping cart, user authentication (login/register).
+This project includes product listing, product details, shopping cart, user authentication (login/register) and more.
 
 ---
 
@@ -37,12 +38,16 @@ This project includes product listing, product details, shopping cart, user auth
 
 🔮 Future Improvements
 - 📱 **Responsive Design** (mobile, tablet, desktop)  
--💳 Checkout process with payment integration
--📊 Admin dashboard for product management
--🌐 API integration for dynamic product data
+- 💳 Checkout process with payment integration
+- 📊 Admin dashboard for product and users management
+- 🌐 API integration for dynamic product data
+- ❤️ Wishlist & product comparison  
+- ⭐ User reviews & ratings  
+- ✉️ Email notifications  
+- 🚚 Order tracking  
 
 ---
 
 ## 🚀 Live Demo
-
+http://e-market-js.surge.sh/
 ---
