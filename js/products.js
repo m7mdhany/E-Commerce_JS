@@ -144,13 +144,13 @@ async function getData() {
             if (newH == cardContainer.offsetHeight) {
               document.querySelector(".more-cards").style.display = "none"
             }
-          });
+          }, { once: true });
         })
       }
       if (filter.length == 0) {
         document.querySelector(".more-cards").style.display = "none"
         cardContainer.innerHTML = `<p class="text-2xl w-full color-grey-300">No search results!</p>`
-
+        console.log("?");
       }
 
       // product card page---------------------------------------------------------
