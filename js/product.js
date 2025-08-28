@@ -85,11 +85,37 @@ async function getData(val = undefined, key) {
       let cart = this.parentElement.querySelector("h2").innerText
       let cartNumber = document.querySelector(".cart-number")
       let cartN = sessionStorage.getItem("CartN")
+
+      // fot notifications
+      let test = document.querySelector(".notif-cont")
+      let notif = document.createElement("div")
+      notif.className = "order-msg w-50 h-20 rounded-l-2xl relative top-0 -right-500 bg-main/70 text-white transform transition-all duration-300 z-50 flex justify-center items-center shadow-xl"
+      if (!allCart.includes(cart)) {
+        notif.innerText = "Item added!"
+      } else {
+        notif.innerText = "Already in cart!"
+        notif.classList.remove("bg-main/50")
+        notif.classList.add("bg-red-500/50")
+      }
+      test.appendChild(notif)
+      setTimeout(() => {
+        notif.classList.add("right-0")
+      }, 10)
+      setTimeout(() => {
+        notif.classList.remove("right-0")
+        setTimeout(() => {
+          notif.classList.add("hidden")
+        }, 300)
+      }, 3000)
+      setTimeout(() => {
+        notif.remove()
+      }, 4000)
       if (!allCart.includes(cart)) {
         cartN++
         allCart.push(cart)
         console.log(allCart);
       }
+      
       sessionStorage.setItem("cart", allCart)
       sessionStorage.setItem("CartN", cartN)
       cartNumber.innerText = sessionStorage.getItem("CartN")
