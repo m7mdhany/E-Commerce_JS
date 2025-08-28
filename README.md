@@ -36,6 +36,49 @@ This project includes product listing, product details, shopping cart, user auth
 
 ---
 
+## 📁 Project Structure
+
+```
+JS project/
+├── Assets/
+│   ├── icon.png
+│   ├── home/
+│   ├── products/
+│   ├── reg-page/
+├── html/
+│   ├── cart-page.html
+│   ├── login.html
+│   ├── product.html
+│   ├── products.html
+│   ├── signup.html
+├── js/
+│   ├── cart.js
+│   ├── home.js
+│   ├── product.js
+│   ├── products.js
+│   ├── script.js
+│   ├── scriptSignin.js
+│   ├── scriptSignup.js
+│   ├── settings.js
+│   ├── slider.js
+├── styles/
+│   ├── colors.css
+│   ├── general_styles.css
+│   ├── home_style.css
+│   ├── products.css
+│   ├── styles.css
+├── data.json
+├── index.html
+├── output.css
+├── tailwind.config.js
+├── tailwind.css
+├── README.md
+├── package.json
+├── package-lock.json
+```
+
+---
+
 🔮 Future Improvements
 - 📱 **Responsive Design** (mobile, tablet, desktop)  
 - 💳 Checkout process with payment integration
