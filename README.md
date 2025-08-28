@@ -40,42 +40,46 @@ This project includes product listing, product details, shopping cart, user auth
 
 ```
 JS project/
-├── Assets/
-│   ├── icon.png
-│   ├── home/
-│   ├── products/
-│   ├── reg-page/
-├── html/
-│   ├── cart-page.html
-│   ├── login.html
-│   ├── product.html
-│   ├── products.html
-│   ├── signup.html
-├── js/
-│   ├── cart.js
-│   ├── home.js
-│   ├── product.js
-│   ├── products.js
-│   ├── script.js
-│   ├── scriptSignin.js
-│   ├── scriptSignup.js
-│   ├── settings.js
-│   ├── slider.js
-├── styles/
-│   ├── colors.css
-│   ├── general_styles.css
-│   ├── home_style.css
-│   ├── products.css
-│   ├── styles.css
-├── data.json
-├── index.html
-├── output.css
-├── tailwind.config.js
-├── tailwind.css
-├── README.md
-├── package.json
-├── package-lock.json
-```
+├── Assets/                # Images and static assets
+│   ├── icon.png           # Site favicon
+│   ├── home/              # Home page images
+│   ├── products/          # Product images
+│   ├── reg-page/          # Registration page images
+├── html/                  # HTML pages
+│   ├── cart-page.html     # Shopping cart page
+│   ├── login.html         # Login page
+│   ├── product.html       # Single product details page
+│   ├── products.html      # All products listing page
+│   ├── signup.html        # Signup/registration page
+├── js/                    # JavaScript source files
+│   ├── cart.js            # Cart functionality
+│   ├── home.js            # Home page scripts
+│   ├── product.js         # Single product scripts
+│   ├── products.js        # Products listing scripts
+│   ├── script.js          # General scripts
+│   ├── scriptSignin.js    # Sign-in logic
+│   ├── scriptSignup.js    # Sign-up logic
+│   ├── settings.js        # Settings and preferences
+│   ├── slider.js          # Slider/carousel scripts
+├── styles/                # CSS stylesheets
+│   ├── colors.css         # Color variables and themes
+│   ├── general_styles.css # General/global styles
+│   ├── home_style.css     # Home page styles
+│   ├── products.css       # Products page styles
+│   ├── styles.css         # Main stylesheet
+├── .vscode/               # VS Code settings
+│   └── settings.json      # Editor configuration
+├── data.json              # Product or app data (JSON)
+├── new.json               # Additional data (JSON)
+├── output.css             # Compiled Tailwind CSS
+├── tailwind.config.js     # Tailwind CSS configuration
+├── tailwind.css           # Tailwind CSS source
+├── README.md              # Project documentation
+├── package.json           # NPM package manifest
+├── package-lock.json      # NPM lock file
+├── index.html             # Main entry HTML page
+├── CNAME                  # Custom domain config (GitHub Pages)
+├── structure.txt          #
 
 ---
 
