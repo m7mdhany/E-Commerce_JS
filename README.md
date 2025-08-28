@@ -96,6 +96,6 @@ JS project/
 ---
 
 ## 🚀 Live Demo
-🔗 [Click Here to Visit](https://e-market-js.surge.sh/)  
+[E-MARKET](http://e-market-js.surge.sh/)
 
 ---
