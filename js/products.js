@@ -85,7 +85,7 @@ async function getData() {
                   </div >
                   <div class="h-1/4 flex flex-col justify-around ">
                   <h2 class="p-name text-center font-bold">${arr[i].name}</h2>
-                  <h3 class="price"><span class="font-bold">Price</span> : ${arr[i].price} LE</h3>
+                  <h3 class="price"><span class="font-bold">Price</span> : ${arr[i].price.toLocaleString()} LE</h3>
                   </div>
                 </div >
                   <button class="btn-cart p-2 self-center w-full cursor-pointer text-white bg-secondary hover:bg-main transition-all duration-200">Add to cart</button>

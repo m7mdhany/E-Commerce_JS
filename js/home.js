@@ -93,7 +93,7 @@ async function getData(val1 = undefined, val2 = undefined) {
             <div class="w-full flex flex-col items-center bg-white shadow-lg">
               <h3 class="text-center font-bold rounded-2xl text- h-13 flex items-center p-2">${filter[i].name}</h3>
               <span class="w-fit text-center bg-main text-xl p-1 text-white font-bold absolute right-0 top-60">
-              ${filter[i].price} LE</span>
+              ${filter[i].price.toLocaleString()} LE</span>
               <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white transition-color duration-200">
                 Add to cart</button>
             </div>
@@ -130,9 +130,9 @@ async function getData(val1 = undefined, val2 = undefined) {
                 <p class="timer p-1 w-full grow text-main font-bold text-center bg-white px-2">
                   00:00:00</p>
                 <span class="w-fit text-center bg-main p-1 text-red-600 line-through font-bold whitespace-nowrap ">
-                ${filter[i].price} LE</span>
+                ${filter[i].price.toLocaleString()} LE</span>
                 <span class="w-fit text-center bg-main p-1 text-white font-bold whitespace-nowrap">
-                ${filter[i].price - (filter[i].price * filter[i].discount)}  LE</span>
+                ${(filter[i].price - (filter[i].price * filter[i].discount)).toLocaleString()}  LE</span>
               </div>
               <button class="btn-cart bg-secondary hover:bg-main font-bold py-2 cursor-pointer w-full text-white transition-color duration-200">
                 Add to cart</button>

@@ -64,9 +64,9 @@ async function getData(val = undefined, key) {
       if (key == "name" || key == "image" || key == "discount") {
       } else {
         if (key == "price") {
-          p2.innerHTML = ": " + `${product[key]} LE`
+          p2.innerHTML = ": " + `${product[key].toLocaleString()} LE`
         } else {
-          p2.innerHTML = ": " + `${product[key]}`
+          p2.innerHTML = ": " + `${product[key].toLocaleString()}`
         }
 
         p1.innerHTML = `${key}`
@@ -115,7 +115,7 @@ async function getData(val = undefined, key) {
         allCart.push(cart)
         console.log(allCart);
       }
-      
+
       sessionStorage.setItem("cart", allCart)
       sessionStorage.setItem("CartN", cartN)
       cartNumber.innerText = sessionStorage.getItem("CartN")

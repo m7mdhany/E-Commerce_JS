@@ -76,10 +76,10 @@ async function getData(val = undefined, key) {
                   </div>
                 </div>
                 <div class=" col-span-2  flex justify-end gap-1">
-                  <p class="text-center price">${product[i].price}</p><span>LE<span/>
+                  <p class="text-center price">${product[i].price.toLocaleString()}</p><span>LE<span/>
                 </div>
                 <div class=" col-span-2  flex justify-end gap-1">
-                  <p class="text-center total-price">${product[i].price}</p> <span>LE<span/>
+                  <p class="text-center total-price">${product[i].price.toLocaleString()}</p> <span>LE<span/>
                 </div>
               </div>
       `
@@ -88,9 +88,9 @@ async function getData(val = undefined, key) {
       // order summary
       total = total + product[i].price
       let priceSumTotal = document.querySelector(".total-sum-price")
-      priceSumTotal.innerText = total
+      priceSumTotal.innerText = total.toLocaleString()
       let priceSumTotalFinal = document.querySelector(".total-sum-price-f")
-      priceSumTotalFinal.innerText = total
+      priceSumTotalFinal.innerText = total.toLocaleString()
       // items count
       document.querySelector(".items-total").innerText = product.length
     }
@@ -133,7 +133,7 @@ async function getData(val = undefined, key) {
         }
         let total = this.closest(".cart-card").querySelector(".total-price")
         let price = this.closest(".cart-card").querySelector(".price")
-        total.innerText = cartQuantity[i].innerText * price.innerText
+        total.innerText = (Number(cartQuantity[i].innerText.replace(/,/g, "")) * Number(price.innerText.replace(/,/g, ""))).toLocaleString()
         // order summary
         let priceSumTotal = document.querySelector(".total-sum-price")
         let priceSumTotalFinal = document.querySelector(".total-sum-price-f")
@@ -142,24 +142,24 @@ async function getData(val = undefined, key) {
         for (let i = 0; i < totals.length; i++) {
           sum += Number(totals[i].innerText)
         }
-        priceSumTotal.innerText = sum
-        priceSumTotalFinal.innerText = sum
+        priceSumTotal.innerText = sum.toLocaleString()
+        priceSumTotalFinal.innerText = sum.toLocaleString()
       })
       btnDec[i].addEventListener('click', function () {
         cartQuantity[i].innerText++
         let total = this.closest(".cart-card").querySelector(".total-price")
         let price = this.closest(".cart-card").querySelector(".price")
-        total.innerText = cartQuantity[i].innerText * price.innerText
+        total.innerText = (Number(cartQuantity[i].innerText.replace(/,/g, "")) * Number(price.innerText.replace(/,/g, ""))).toLocaleString()
         // order summary
         let priceSumTotal = document.querySelector(".total-sum-price")
         let priceSumTotalFinal = document.querySelector(".total-sum-price-f")
         let totals = document.querySelectorAll(".total-price")
         let sum = 0
         for (let i = 0; i < totals.length; i++) {
-          sum += Number(totals[i].innerText)
+          sum += Number(totals[i].innerText.replace(/,/g, ""))
         }
-        priceSumTotal.innerText = sum
-        priceSumTotalFinal.innerText = sum
+        priceSumTotal.innerText = sum.toLocaleString()
+        priceSumTotalFinal.innerText = sum.toLocaleString()
         btnInc[i].innerHTML = "-"
         btnInc[i].classList.add("bg-secondary", "hover:bg-main")
         btnInc[i].classList.remove("bg-red-500")
