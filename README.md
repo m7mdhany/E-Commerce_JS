@@ -11,7 +11,7 @@
 
 ## 📌 Overview
 A fully functional **E-Commerce website** built with **HTML5, CSS3, Tailwind CSS, and Vanilla JavaScript**.  
-This project includes product listing, product details, shopping cart, user authentication (login/register), and a responsive design for a smooth shopping experience.
+This project includes product listing, product details, shopping cart, user authentication (login/register).
 
 ---
 
@@ -21,7 +21,6 @@ This project includes product listing, product details, shopping cart, user auth
 - 🔎 **Product Details Page** (description, images, quantity options)  
 - 🛍️ **Shopping Cart** (add, update, remove items) with persistent data in `localStorage`  
 - 🔐 **User Authentication** (Login/Register system with client-side validation and session handling)  
-- 📱 **Responsive Design** (mobile, tablet, desktop)  
 - 🎨 **Tailwind CSS styling** for fast, clean, and scalable UI  
 - ⚡ **Vanilla JavaScript (ES6+)** for dynamic interactivity
 
@@ -36,10 +35,14 @@ This project includes product listing, product details, shopping cart, user auth
 
 ---
 
-## 🚀 Live Demo
-👉 [View Live Project](#)  
-*(Replace the link above with your GitHub Pages or hosting URL)*
+🔮 Future Improvements
+- 📱 **Responsive Design** (mobile, tablet, desktop)  
+-💳 Checkout process with payment integration
+-📊 Admin dashboard for product management
+-🌐 API integration for dynamic product data
 
 ---
 
-## 📂 Project Structure
+## 🚀 Live Demo
+
+---
